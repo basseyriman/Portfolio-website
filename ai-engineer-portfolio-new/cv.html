@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bassey Riman - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.45;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 24px 42px;
+            background: #ffffff;
+            font-size: 11px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* Header section */
+        header {
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #111;
+            margin: 0 0 2px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #2563eb;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 9.5px;
+            color: #4b5563;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .contact-item a {
+            color: #4b5563;
+            text-decoration: none;
+        }
+
+        /* Professional Summary */
+        .summary {
+            font-size: 10.5px;
+            line-height: 1.5;
+            color: #374151;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Section Headings */
+        h2 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 3px;
+            margin: 10px 0 6px 0;
+        }
+
+        /* Experience & Projects */
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 11px;
+            color: #111;
+        }
+
+        .item-org {
+            font-weight: 600;
+            color: #374151;
+            font-size: 10px;
+        }
+
+        .item-date {
+            font-weight: 500;
+            color: #6b7280;
+            font-size: 9.5px;
+        }
+
+        .item-loc {
+            color: #6b7280;
+            font-size: 9.5px;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 3px 0 7px 0;
+            padding-left: 16px;
+            color: #374151;
+        }
+
+        li {
+            margin-bottom: 2px;
+            line-height: 1.35;
+        }
+
+        .tech-stack {
+            font-size: 8.5px;
+            color: #6b7280;
+            margin-top: -3px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* Skills section (Grid layout) */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .skill-group h3 {
+            font-size: 10px;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 2px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-list li {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 1.5px 5px;
+            border-radius: 4px;
+            font-size: 8.5px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bassey Riman</h1>
+        <div class="subtitle">AI & Machine Learning Engineer</div>
+        <div class="contact-info">
+            <div class="contact-item">📍 London, UK</div>
+            <div class="contact-item">📞 (+44) 7359 816447</div>
+            <div class="contact-item">✉️ <a href="mailto:basseyriman@gmail.com">basseyriman@gmail.com</a></div>
+            <div class="contact-item">🔗 <a href="https://linkedin.com/in/basseyriman">linkedin.com/in/basseyriman</a>
+            </div>
+            <div class="contact-item">💻 <a href="https://github.com/basseyriman">github.com/basseyriman</a></div>
+        </div>
+    </header>
+
+    <div class="summary">
+        Experienced technical founder and AI/Machine Learning Engineer specializing in large language models, deep
+        learning systems, and intelligent applications. Proven expertise in developing end-to-end AI solutions across
+        diverse domains including healthcare, predictive analytics, and generative AI. Skilled in model architecture
+        design, generative AI orchestration, data pipelines, and full-stack MLOps deployment. Recognized for driving
+        product vision, engineering scalable platforms, and shipping robust production-grade systems.
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+        <div class="skill-group">
+            <h3>Generative AI & LLM Ops</h3>
+            <ul class="skill-list">
+                <li>LLMs (GPT-4, Claude)</li>
+                <li>RAG Systems</li>
+                <li>AI Agents</li>
+                <li>LangChain</li>
+                <li>LlamaIndex</li>
+                <li>Prompt Engineering</li>
+            </ul>
+        </div>
+        <div class="skill-group">
+            <h3>Deep Learning & Vision</h3>
+            <ul class="skill-list">
+                <li>Vision Transformers (ViT)</li>
+                <li>PyTorch</li>
+                <li>TensorFlow</li>
+                <li>CNNs</li>
+                <li>Neural Architecture</li>
+                <li>Model Optimization</li>
+            </ul>
+        </div>
+        <div class="skill-group">
+            <h3>MLOps & Infrastructure</h3>
+            <ul class="skill-list">
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Vector DBs</li>
+                <li>AWS / GCP</li>
+                <li>MLflow</li>
+                <li>CI/CD for ML</li>
+            </ul>
+        </div>
+        <div class="skill-group">
+            <h3>Data Science & Analytics</h3>
+            <ul class="skill-list">
+                <li>Predictive Modeling</li>
+                <li>Gradient Boosting</li>
+                <li>Statistical Analysis</li>
+                <li>Data Pipelines</li>
+                <li>SQL/NoSQL</li>
+                <li>Feature Engineering</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Experience</h2>
+
+    <div class="item-row">
+        <div><span class="item-title">Technical Operations Specialist</span> <span class="item-org">| Deloitte, London,
+                UK</span></div>
+        <div class="item-date">Sept 2025 – Present</div>
+    </div>
+    <ul>
+        <li>Deliver excellent client service and issue resolution across Deloitte smart facilities.</li>
+        <li>Manage staff access using Cardex and contractor permits via Gallagher.</li>
+        <li>Maintain knowledge of Deloitte Smart Wayfinding to support workspace navigation.</li>
+    </ul>
+
+    <div class="item-row">
+        <div><span class="item-title">Machine Learning Engineer (Intern)</span> <span class="item-org">| Middlesbrough
+                Football Club, UK</span></div>
+        <div class="item-date">Jan 2024 – May 2024</div>
+    </div>
+    <ul>
+        <li>Developed machine learning models to classify players and predict performance outcomes based on physical
+            profiling data.</li>
+        <li>Leveraged gradient boosting techniques for accurate predictions, using regularization to prevent overfitting
+            and identify key performance indicators.</li>
+    </ul>
+
+    <div class="item-row">
+        <div><span class="item-title">Founder & Technical Lead</span> <span class="item-org">| The Legitimate Store
+                (E-commerce), Remote</span></div>
+        <div class="item-date">Feb 2018 – Aug 2025</div>
+    </div>
+    <ul>
+        <li>Founded and engineered the platform, defining product vision and leading the end-to-end development
+            lifecycle.</li>
+        <li>Developed and deployed "Lana", an AI/ML system optimizing sales and delivering deep customer insights.</li>
+        <li>Built robust predictive models for demand forecasting, customer behavior mapping, and recommendation
+            engines.</li>
+        <li>Engineered scalable frontend architecture and deterministic state management for a modern Progressive Web
+            App (PWA).</li>
+    </ul>
+
+    <div class="item-row">
+        <div><span class="item-title">Software Engineer</span> <span class="item-org">| 3chub Brand Management Ltd,
+                Lagos, Nigeria</span></div>
+        <div class="item-date">Jan 2017 – Dec 2022</div>
+    </div>
+    <ul>
+        <li>Designed scalable web and robust backend systems for high-traffic e-commerce operations.</li>
+        <li>Built REST APIs and databases, integrating JavaScript/React for responsive and modern UI experiences.</li>
+        <li>Developed advanced analytics tools for tracking inventory, sales trends, and actionable customer insights.
+        </li>
+    </ul>
+
+    <h2>Key Projects</h2>
+
+    <div class="item-row">
+        <div class="item-title">AlzDetect – AI-Powered Alzheimer’s Detection System</div>
+        <div class="item-date">Sept 2024 – Dec 2024</div>
+    </div>
+    <div class="tech-stack">Python, TensorFlow, Keras, OpenCV, Vision Transformers (ViT)</div>
+    <ul>
+        <li>Built an advanced deep learning model (ViT/CNN architecture) for early Alzheimer’s detection from MRI
+            imaging.</li>
+        <li>Achieved state-of-the-art 98% accuracy; designed architecture to support NHS clinical assessments and early
+            intervention.</li>
+    </ul>
+
+    <div class="item-row">
+        <div class="item-title">PhotoCap – Generative AI Vision App</div>
+        <div class="item-date">May 2024 – Aug 2024</div>
+    </div>
+    <div class="tech-stack">React, Next.js, GPT-4 Vision API, Tailwind CSS</div>
+    <ul>
+        <li>Developed a full-stack web application leveraging GPT Vision to automatically generate context-aware
+            captions from user photos.</li>
+        <li>Engineered smart, mood-aware prompting logic allowing one-click social media sharing via automated analysis.
+        </li>
+    </ul>
+
+    <div class="item-row">
+        <div class="item-title">PursePro – PWA Financial Dashboard</div>
+        <div class="item-date">Nov 2025 – Dec 2025</div>
+    </div>
+    <div class="tech-stack">React, TailwindCSS, Zustand, Recharts</div>
+    <ul>
+        <li>Developed a premium, modern progressive web application (PWA) interactive financial dashboard featuring
+            budgeting logic, charting components, and interactive category tracking for personal finance.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <div class="item-row">
+        <div><span class="item-title">M.S. in Artificial Intelligence with Advanced Practice</span> (Distinction)</div>
+        <div class="item-date">Jan 2023 – Jan 2025</div>
+    </div>
+    <div class="item-row" style="margin-bottom: 6px;">
+        <div class="item-org">Teesside University, Middlesbrough, UK</div>
+    </div>
+
+    <div class="item-row">
+        <div><span class="item-title">B.S. in Computer Science</span></div>
+        <div class="item-date">Jan 2010 – Dec 2014</div>
+    </div>
+    <div class="item-row">
+        <div class="item-org">University of Cross River State, Nigeria</div>
+    </div>
+
+</body>
+
+</html>
