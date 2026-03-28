@@ -1,51 +1,45 @@
-# 🚀 Bassey Riman | AI & Machine Learning Engineer Portfolio
+# 🚀 Bassey Riman | Strategic AI Leader & AI Engineer
 
-Welcome to the official repository for my professional portfolio. I am a technical founder and AI Specialist dedicated to building production-grade intelligent systems that solve real-world challenges.
-
----
-
-## 👨‍💻 About Me
-
-I am an experienced technical founder and **AI/Machine Learning Engineer** specializing in large language models (LLMs), deep learning systems, and intelligent orchestration. My expertise lies in developing end-to-end AI solutions across diverse domains including healthcare, predictive analytics, and sports technology.
-
-### What I Do:
-*   **Generative AI & LLM Ops**: Designing robust RAG systems, AI agents, and fine-tuning models (GPT-4, Claude).
-*   **Deep Learning & Computer Vision**: Implementing state-of-the-art architectures like Vision Transformers (ViT) for medical imaging and performance analytics.
-*   **MLOps & Scalable Infrastructure**: Engineering automated pipelines, vector database integration (Pinecone, Milvus), and cloud-native deployments (AWS/GCP).
-*   **Product Vision**: Bridging the gap between specialized research and scalable, business-ready applications.
+Welcome to the official repository for my professional portfolio. I am a **Strategic AI Leader** and **Healthcare AI Researcher** dedicated to translating multi-dimensional intelligence into high-reliability, real-world systems for clinical diagnostics and education.
 
 ---
 
-## 🛠️ Tech Stack & Expertise
+## 👨‍💻 Strategic Positioning
 
-| Domain | Technologies |
+I bridge the gap between **Scientific Research** and **Industrial Application**. My expertise lies in architecting high-impact AI systems—specifically leveraging **Vision Transformers (ViT)** and **Explainable AI (XAI)**—to solve complex global challenges at scale.
+
+### Core Authority Areas:
+*   **Clinical AI / Medical Vision**: Developed a Vision Transformer system for early Alzheimer’s discovery from clinical MRI scans with **98% diagnostic accuracy**.
+*   **Applied XAI & Model Trust**: Pioneering the use of **Grad-CAM and SHAP** validation in clinical AI to ensure physician-level interpretability and trust.
+*   **Intelligent Systems & Automation**: Leading industrial-scale AI deployments and autonomous systems for smart facilities.
+*   **Product & Research Vision**: Successfully transitioning specialized research from the lab into business-ready, production-grade applications.
+
+---
+
+## 🛠️ Tech Stack & Strategic Advantage
+
+| Domain | Strategic Advantage |
 | :--- | :--- |
-| **AI / Machine Learning** | PyTorch, TensorFlow, Scikit-learn, LangChain, LlamaIndex |
-| **Generative AI** | LLM Fine-tuning, Prompt Engineering, RAG Architectures, AI Agents |
-| **Computer Vision** | Vision Transformers (ViT), CNNs, OpenCV, Image Segmentation |
-| **Infrastructure & Ops** | Docker, Kubernetes, Weights & Biases, MLflow, AWS, GCP |
-| **Data Engineering** | Data Pipelines, Vector DBs, SQL/NoSQL, Predictive Modeling |
-| **Web Development** | Next.js, React, TypeScript, Tailwind CSS, Framer Motion |
+| **Medical vision & Computer Vision** | Vision Transformers (ViT), Grad-CAM, MRI Analysis, High-Precision Classification |
+| **Applied XAI & Model Trust** | SHAP, Interpretability Frameworks, Clinical Validation, Ethics & Transparency |
+| **Generative AI & LLM Ops** | RAG Architectures, AI Agents, Fine-tuning, Intelligent Orchestration |
+| **Infrastructure & Scalability** | Production MLOps, Cloud AI (AWS/GCP), High-Concurrency Distributed Systems |
+| **Web & UI Excellence** | Modern Aesthetic Design, Next.js, Framer Motion, Premium User Experience |
 
 ---
 
-## 🌟 Featured Projects
+## 🌟 Featured Industrial & Research Impact
 
-### 🧠 AlzDetect
-**AI-Powered Alzheimer's Detection System**
-*   **Core Tech**: Vision Transformer (ViT), PyTorch, Medical Imaging Analysis.
-*   **Impact**: Achieved 99% accuracy in early diagnosis from MRI scans.
-*   **Role**: Lead Research & Development.
+### 🧠 AlzDetect (98% Accuracy)
+**Vision Transformer System for Early Alzheimer’s Detection**
+*   **Core Tech**: ViT-Base, PyTorch, Grad-CAM (XAI), Medical Imaging Analysis.
+*   **Impact**: Featured in **ThisDay, The Nation, and Vanguard** for its potential to transform clinical diagnostic pathways.
+*   **Metric**: 98% Accuracy with high AUC and F1-score for early-stage discovery.
 
-### 📸 PhotoCap
-**LLM-Powered Social Media Content Generator**
-*   **Core Tech**: OpenAI/Claude APIs, LangChain, Next.js.
-*   **Functionality**: Automatically generates context-aware captions based on photo analysis (outfit, location, time).
-
-### ⚽ Sports Analytics Engine (Internship)
+### ⚽ Elite Performance AI (Sports Analytics)
 **Middlesbrough Football Club**
-*   **Core Tech**: Gradient Boosting, Predictive Modeling.
-*   **Impact**: Classified player performance outcomes based on physical profiling data.
+*   **Core Tech**: Gradient Boosting, Advanced Predictive Modeling.
+*   **Impact**: Classified player performance outcomes based on physical profiling data to inform multi-million pound talent identification strategies.
 
 ---
 
