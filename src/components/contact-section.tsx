@@ -24,22 +24,21 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="container px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 sm:py-32 relative overflow-hidden flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto flex flex-col items-center"
         >
           <div className="text-center mb-16">
             <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl font-black mb-6 text-balance text-gradient">
-              Let's Build Something Amazing
+              Open to collaborations, research opportunities, and AI innovation in healthcare and education
             </motion.h2>
             <motion.p variants={itemVariants} className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              I'm always interested in hearing about new projects and opportunities. Whether you have a question or just
-              want to say hi, feel free to reach out!
+              I'm always interested in hearing about new high-impact projects and research collaborations. Whether you have a specific proposal or just want to discuss the future of AI, feel free to reach out!
             </motion.p>
           </div>
 
@@ -79,8 +78,8 @@ export function ContactSection() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-4xl mx-auto mt-24 px-4 pb-12">
-        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6 text-base text-muted-foreground">
+      <div className="max-w-4xl mx-auto mt-24 px-4 pb-12 flex flex-col items-center">
+        <div className="pt-12 w-full border-t border-white/5 flex flex-col items-center justify-center gap-6 text-base text-muted-foreground text-center">
           <p>© 2026 Bassey Riman. Built with Next.js, Framer Motion & Premium Aesthetics</p>
           <div className="flex items-center gap-8">
             <a href="https://github.com/basseyriman" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>

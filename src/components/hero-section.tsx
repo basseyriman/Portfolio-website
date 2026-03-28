@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function HeroSection() {
   const containerVariants = {
@@ -25,32 +26,69 @@ export function HeroSection() {
     },
   }
 
+  const [nodes, setNodes] = useState<{ top: string; left: string; duration: number; x: number[]; y: number[] }[]>([])
+
+  useEffect(() => {
+    const generatedNodes = [...Array(6)].map((_, i) => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      duration: 10 + i * 2,
+      x: [0, Math.random() * 100 - 50, 0],
+      y: [0, Math.random() * 100 - 50, 0],
+    }))
+    setNodes(generatedNodes)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Dynamic Neural Nodes */}
+      <div className="absolute inset-0 pointer-events-none">
+        {nodes.map((node, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              x: node.x,
+              y: node.y,
+              opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{
+              duration: node.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute h-64 w-64 bg-primary/10 rounded-full blur-[80px]"
+            style={{
+              top: node.top,
+              left: node.left,
+            }}
+          />
+        ))}
+      </div>
+
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       {/* Animated Glow Effect */}
       <motion.div
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.3, 0.2],
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.15, 0.1],
         }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]"
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[160px]"
       />
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container relative z-10 px-4 sm:px-6 lg:px-8"
+        className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-4xl mx-auto text-center space-y-12">
+        <div className="max-w-5xl mx-auto text-center space-y-12">
           <div className="space-y-6">
             <motion.div variants={itemVariants} className="inline-block">
               <span className="text-sm font-mono text-primary border border-primary/30 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm">
@@ -60,17 +98,28 @@ export function HeroSection() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-balance leading-none"
+              className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none"
             >
               Bassey Riman
-              <span className="block text-primary mt-4 text-gradient">AI & Machine Learning Engineer</span>
+              <span className="block text-primary mt-4 text-gradient text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                AI Engineer specializing in healthcare and education, building Vision Transformer systems for real-world impact.
+              </span>
             </motion.h1>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center justify-center gap-2 text-sm sm:text-base font-medium text-primary/80 bg-primary/5 backdrop-blur-sm border border-primary/10 px-6 py-2 rounded-full w-fit mx-auto"
+            >
+              <span className="whitespace-nowrap">MSc AI (Distinction)</span>
+              <span className="opacity-30">|</span>
+              <span className="whitespace-nowrap text-primary">Speaker | AI Research & Innovation | Healthcare AI Advocate</span>
+            </motion.div>
 
             <motion.p
               variants={itemVariants}
               className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed"
             >
-              Specializing in large language models, machine learning systems, and building intelligent applications that solve real-world problems.
+              Featured in ThisDay, The Nation, and Vanguard for work in healthcare AI and AI education.
             </motion.p>
           </div>
 
@@ -85,7 +134,7 @@ export function HeroSection() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="h-14 px-8 text-lg backdrop-blur-sm" asChild>
-              <a href="#contact">Get In Touch</a>
+              <a href="#contact">Open to Collaborations & Research</a>
             </Button>
           </motion.div>
 

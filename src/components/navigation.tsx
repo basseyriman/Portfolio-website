@@ -6,10 +6,11 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
+  { name: "Impact", href: "#recognition" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
+  { name: "Experience", href: "#experience" },
+  { name: "Expertise", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -69,7 +70,7 @@ export function Navigation() {
               className="ml-4"
             >
               <Button size="sm" className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20" asChild>
-                <a href="/Bassey_Riman_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="/cv.html" target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </motion.div>
           </div>
@@ -110,7 +111,7 @@ export function Navigation() {
                 ))}
                 <div className="pt-2">
                   <Button size="lg" className="w-full bg-primary hover:bg-primary/90" asChild>
-                    <a href="/Bassey_Riman_Resume.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Resume</a>
+                    <a href="/cv.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>Resume</a>
                   </Button>
                 </div>
               </div>

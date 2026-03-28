@@ -7,50 +7,50 @@ import { motion } from "framer-motion"
 const skillCategories = [
   {
     icon: Brain,
-    title: "Generative AI & LLM Ops",
+    title: "Clinical AI & Medical Vision",
     skills: [
-      "Large Language Models (GPT-4, Claude)",
-      "RAG Systems & Vector Search",
-      "AI Agent Frameworks",
-      "LangChain & LlamaIndex",
-      "Prompt Engineering",
-      "Fine-tuning & Quantization",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Deep Learning & Vision",
-    skills: [
+      "Clinical Image Analysis",
+      "MRI & Medical Data Processing",
       "Vision Transformers (ViT)",
-      "PyTorch & TensorFlow",
-      "Neural Architecture Design",
-      "Convolutional Neural Networks",
-      "Object Detection & Segmentation",
-      "Model Optimization",
+      "Disease Prediction Models",
+      "Medical Diagnostic Support",
+      "Healthcare Data Strategy",
     ],
   },
   {
     icon: Database,
-    title: "MLOps & Infrastructure",
+    title: "Applied XAI & Model Trust",
     skills: [
-      "Docker & Kubernetes",
-      "Vector DBs (Pinecone, Milvus)",
-      "AWS / GCP / Azure",
-      "MLflow & Model Tracking",
-      "CI/CD for Machine Learning",
-      "Scalable API Deployment",
+      "Grad-CAM & Attention Maps",
+      "SHAP & Model Interpretability",
+      "Clinical Trust & Transparency",
+      "Bias Analysis & Mitigation",
+      "Expert-in-the-loop Systems",
+      "Strategic Model Validation",
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: "Intelligent Systems & Automation",
+    skills: [
+      "Neural Architecture Design",
+      "Adaptive Learning Systems",
+      "Predictive Analytics & ROI",
+      "Scalable Learning Infrastructure",
+      "Intelligent Process Automation",
+      "Generative AI Architectures",
     ],
   },
   {
     icon: Code,
-    title: "Data Science & analytics",
+    title: "Advanced Engineering Stack",
     skills: [
-      "Gradient Boosting (XGBoost, LightGBM)",
-      "Predictive Modeling",
-      "Statistical Data Analysis",
-      "Data Pipeline Engineering",
-      "Feature Engineering",
-      "Advanced SQL & NoSQL",
+      "Python / PyTorch / TensorFlow",
+      "Next.js / TypeScript / React",
+      "Cloud AI (AWS / Azure / GCP)",
+      "Production-Grade MLOps",
+      "Distributed System Design",
+      "Full-Stack AI Integration",
     ],
   },
 ]
@@ -72,17 +72,18 @@ export function SkillsSection() {
   }
 
   return (
-    <section id="skills" className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-24 sm:py-32 relative overflow-hidden flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="max-w-6xl mx-auto flex flex-col items-center">
           <motion.h2
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-bold mb-16 text-balance flex items-center gap-4"
+            className="text-4xl sm:text-5xl font-bold mb-16 text-balance flex items-center justify-center gap-4 text-center"
           >
+            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
             Skills & Expertise
-            <div className="h-px bg-primary/30 flex-1" />
+            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
           </motion.h2>
 
           <motion.div
@@ -96,17 +97,17 @@ export function SkillsSection() {
               const Icon = category.icon
               return (
                 <motion.div key={index} variants={itemVariants}>
-                  <Card className="p-8 glass hover:bg-white/5 border-white/5 hover:border-primary/50 transition-all duration-500 group">
-                    <div className="flex items-center gap-4 mb-6">
+                  <Card className="p-8 glass hover:bg-white/5 border-white/5 hover:border-primary/50 transition-all duration-500 group flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center gap-4 mb-6">
                       <div className="p-3 rounded-xl glass-darker group-hover:bg-primary/20 transition-colors">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground">{category.title}</h3>
+                      <h3 className="text-2xl font-bold text-foreground text-center">{category.title}</h3>
                     </div>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 w-full">
                       {category.skills.map((skill) => (
-                        <li key={skill} className="text-muted-foreground text-lg flex items-center gap-3 group-hover:text-foreground transition-colors">
+                        <li key={skill} className="text-muted-foreground text-lg flex items-center justify-center gap-3 group-hover:text-foreground transition-colors">
                           <span className="w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" />
                           {skill}
                         </li>
