@@ -19,7 +19,7 @@ const projects = [
       "Implemented Grad-CAM for medical-grade XAI trust"
     ],
     github: "https://github.com/basseyriman/AlzDetect",
-    demo: "https://dissertation-7btvsdelz-bassey-rimans-projects.vercel.app/",
+    demo: "https://alzdetect-ruby.vercel.app/",
   },
   {
     title: "📊 Adaptive AI in Education platform",

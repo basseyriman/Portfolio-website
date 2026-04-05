@@ -82,14 +82,6 @@ export function MediaSection() {
             ))}
           </div>
           
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl text-primary font-medium max-w-3xl mx-auto leading-relaxed"
-          >
-            My work focuses on developing real-world AI systems and contributing to conversations shaping the future of AI in healthcare and education.
-          </motion.p>
         </div>
       </div>
     </section>

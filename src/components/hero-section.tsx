@@ -18,11 +18,16 @@ export function HeroSection() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" as const },
+      transition: { 
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 1.2
+      } as const,
     },
   }
 
@@ -98,29 +103,34 @@ export function HeroSection() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none"
+              className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] py-2"
             >
-              Bassey Riman
-              <span className="block text-primary mt-4 text-gradient text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-                AI Engineer specializing in healthcare and education, building Vision Transformer systems for real-world impact.
+              {/* Subtle Header Glow */}
+              <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-50 select-none pointer-events-none" />
+              
+              <span className="text-gradient">Bassey Riman</span>
+              <span className="block title-gradient mt-2">
+                AI Engineer
               </span>
             </motion.h1>
 
+            <motion.p
+              variants={itemVariants}
+              className="text-xl sm:text-2xl text-foreground font-medium max-w-4xl mx-auto text-pretty !leading-tight !mt-8 px-4"
+            >
+              Building AI systems for healthcare and education using Vision Transformers, focused on real-world impact and interpretability.
+            </motion.p>
             <motion.div
               variants={itemVariants}
               className="flex items-center justify-center gap-2 text-sm sm:text-base font-medium text-primary/80 bg-primary/5 backdrop-blur-sm border border-primary/10 px-6 py-2 rounded-full w-fit mx-auto"
             >
-              <span className="whitespace-nowrap">MSc AI (Distinction)</span>
+              <span className="whitespace-nowrap font-bold text-primary">MSc AI (Distinction)</span>
               <span className="opacity-30">|</span>
-              <span className="whitespace-nowrap text-primary">Speaker | AI Research & Innovation | Healthcare AI Advocate</span>
+              <span className="whitespace-nowrap">Speaker</span>
+              <span className="opacity-30">|</span>
+              <span className="whitespace-nowrap">AI Research & Innovation</span>
             </motion.div>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed"
-            >
-              Featured in ThisDay, The Nation, and Vanguard for work in healthcare AI and AI education.
-            </motion.p>
           </div>
 
           <motion.div
