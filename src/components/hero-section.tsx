@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, Download, FileText, Github, Linkedin, Mail, Sparkles, MapPin, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -11,14 +12,14 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,
       y: 0,
@@ -26,7 +27,7 @@ export function HeroSection() {
         type: "spring",
         stiffness: 100,
         damping: 20,
-        duration: 1.2
+        duration: 1.0
       } as const,
     },
   }
@@ -45,8 +46,8 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic Neural Nodes */}
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
+      {/* Dynamic Background Blurs */}
       <div className="absolute inset-0 pointer-events-none">
         {nodes.map((node, i) => (
           <motion.div
@@ -54,14 +55,14 @@ export function HeroSection() {
             animate={{
               x: node.x,
               y: node.y,
-              opacity: [0.1, 0.2, 0.1],
+              opacity: [0.1, 0.22, 0.1],
             }}
             transition={{
               duration: node.duration,
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute h-64 w-64 bg-primary/10 rounded-full blur-[80px]"
+            className="absolute h-72 w-72 bg-primary/10 rounded-full blur-[90px]"
             style={{
               top: node.top,
               left: node.left,
@@ -70,110 +71,96 @@ export function HeroSection() {
         ))}
       </div>
 
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:28px_28px]" />
 
-      {/* Animated Glow Effect */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.15, 0.1],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[160px]"
-      />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-4xl mx-auto text-center"
+        >
+          {/* Identity & Location Badge */}
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-2 mb-6">
+            <Badge variant="outline" className="px-3.5 py-1 text-xs font-mono font-medium border-primary/30 bg-primary/5 text-primary">
+              <Sparkles className="h-3 w-3 mr-1.5 inline" />
+              Founder & Principal AI Architect
+            </Badge>
+            <Badge variant="secondary" className="px-3 py-1 text-xs font-mono">
+              <MapPin className="h-3 w-3 mr-1 inline text-muted-foreground" />
+              London, United Kingdom
+            </Badge>
+            <Badge variant="outline" className="px-3 py-1 text-xs font-mono border-emerald-500/30 text-emerald-400 bg-emerald-500/5">
+              RimansTech Industries
+            </Badge>
+          </motion.div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8"
-      >
-        <div className="max-w-5xl mx-auto text-center space-y-12">
-          <div className="space-y-6">
-            <motion.div variants={itemVariants} className="inline-block">
-              <span className="text-sm font-mono text-primary border border-primary/30 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm">
-                Available for opportunities
-              </span>
-            </motion.div>
+          {/* Headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-6"
+          >
+            Engineering <span className="bg-gradient-to-r from-primary via-sky-400 to-indigo-400 bg-clip-text text-transparent">Intelligent Systems</span> That Ship to Production.
+          </motion.h1>
 
-            <motion.h1
-              variants={itemVariants}
-              className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] py-2"
-            >
-              {/* Subtle Header Glow */}
-              <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-50 select-none pointer-events-none" />
-              
-              <span className="text-gradient">Bassey Riman</span>
-              <span className="block title-gradient mt-2">
-                AI Engineer
-              </span>
-            </motion.h1>
+          {/* Subtitle */}
+          <motion.p
+            variants={itemVariants}
+            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
+          >
+            I architect and deploy production-grade Artificial Intelligence systems across <strong className="text-foreground">Clinical Neuroimaging</strong>, <strong className="text-foreground">Autonomous Browser Agents</strong>, <strong className="text-foreground">Generative Vision</strong>, and <strong className="text-foreground">STEM Education</strong>. Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">RimansTech Industries</a> and author of <em>Young AI Explorers</em>.
+          </motion.p>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-xl sm:text-2xl text-foreground font-medium max-w-4xl mx-auto text-pretty !leading-tight !mt-8 px-4"
-            >
-              Building AI systems for healthcare and education using Vision Transformers, focused on real-world impact and interpretability.
-            </motion.p>
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center justify-center gap-2 text-sm sm:text-base font-medium text-primary/80 bg-primary/5 backdrop-blur-sm border border-primary/10 px-6 py-2 rounded-full w-fit mx-auto"
-            >
-              <span className="whitespace-nowrap font-bold text-primary">MSc AI (Distinction)</span>
-              <span className="opacity-30">|</span>
-              <span className="whitespace-nowrap">Speaker</span>
-              <span className="opacity-30">|</span>
-              <span className="whitespace-nowrap">AI Research & Innovation</span>
-            </motion.div>
-
-          </div>
-
+          {/* Action Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-wrap items-center justify-center gap-4 mb-12"
           >
-            <Button size="lg" className="h-14 px-8 text-lg bg-primary hover:bg-primary/90 group shadow-xl shadow-primary/20" asChild>
+            <Button size="lg" className="gap-2 font-medium" asChild>
               <a href="#projects">
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Explore Shipped Systems
+                <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="h-14 px-8 text-lg backdrop-blur-sm" asChild>
-              <a href="#contact">Open to Collaborations & Research</a>
+            <Button size="lg" variant="outline" className="gap-2 font-medium" asChild>
+              <a href="/Bassey_Riman_Executive_CV.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="h-4 w-4" />
+                Download Executive CV (PDF)
+              </a>
+            </Button>
+            <Button size="lg" variant="ghost" className="gap-2 font-medium text-muted-foreground hover:text-foreground" asChild>
+              <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-4 w-4" />
+                RimansTech Industries
+              </a>
             </Button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Key Metric Highlights Grid */}
           <motion.div
             variants={itemVariants}
-            className="flex items-center justify-center gap-6 pt-12"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border/40 text-left"
           >
-            {[
-              { icon: Github, label: "GitHub", href: "https://github.com/basseyriman" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/basseyriman/" },
-              { icon: Mail, label: "Email", href: "mailto:basseyriman@gmail.com" },
-            ].map((social, i) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-xl glass hover:bg-white/10 transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="h-6 w-6" />
-              </motion.a>
-            ))}
+            <div className="p-3.5 rounded-lg bg-card/40 border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground font-mono">99.00%</div>
+              <div className="text-xs text-muted-foreground mt-0.5">AlzDetect MRI Accuracy (ViT-B/32)</div>
+            </div>
+            <div className="p-3.5 rounded-lg bg-card/40 border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground font-mono">5 Systems</div>
+              <div className="text-xs text-muted-foreground mt-0.5">Proprietary AI Products Shipped</div>
+            </div>
+            <div className="p-3.5 rounded-lg bg-card/40 border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground font-mono">22 Repos</div>
+              <div className="text-xs text-muted-foreground mt-0.5">Public Open-Source on GitHub</div>
+            </div>
+            <div className="p-3.5 rounded-lg bg-card/40 border border-border/50">
+              <div className="text-2xl sm:text-3xl font-bold text-foreground font-mono">Published</div>
+              <div className="text-xs text-muted-foreground mt-0.5">Amazon UK STEM Book Author</div>
+            </div>
           </motion.div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   )
 }

@@ -1,97 +1,117 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Award, CheckCircle2, Globe, Microscope, Presentation } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Award, GraduationCap, FileCheck, Stethoscope, BookCheck, ShieldCheck } from "lucide-react"
+import { motion } from "framer-motion"
 
 const achievements = [
   {
-    icon: Globe,
-    title: "National Media Authority",
-    description: "Formally recognized by ThisDay, The Nation, and Vanguard for pioneering AI research and high-impact leadership in healthcare and education.",
+    icon: Stethoscope,
+    title: "Clinical Neuro-AI Validation",
+    subtitle: "AlzDetect Clinical Evaluation",
+    description: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer, FMC Iddo-Ekiti). Formally verified that the 12-layer attention rollout maps accurately pinpoint early hippocampal atrophy for physician trust.",
+    metric: "99.00% Accuracy",
+    subtext: "5,120 Brain MRIs Evaluated"
   },
   {
-    icon: Microscope,
-    title: "98% Diagnostic Accuracy (ViT)",
-    description: "Developed and deployed a Vision Transformer (ViT) system for early Alzheimer’s discovery from clinical MRI scans with explainable AI validation.",
+    icon: GraduationCap,
+    title: "Academic Research Distinction",
+    subtitle: "MSc Artificial Intelligence",
+    description: "Graduated with Distinction in MSc Artificial Intelligence with Advanced Practice at Teesside University, UK. Supervised by Prof. Claudio Angione, leading to Elsevier journal submission.",
+    metric: "Distinction Award",
+    subtext: "Teesside University, UK"
   },
   {
     icon: Award,
-    title: "Strategic AI Impact Across Domains",
-    description: "Proven track record of bridging the gap between advanced academic research and scalable production-level AI systems in healthcare and industry.",
+    title: "Journal Submission & Faithfulness",
+    subtitle: "Elsevier Neuroscience Informatics",
+    description: "Authored manuscript NEURI-D-26-00238R1 demonstrating that Vision Transformers achieve 0.182 Deletion and 0.788 Insertion AUC faithfulness, outperforming CNN baselines.",
+    metric: "0.9994 ROC-AUC",
+    subtext: "Elsevier NEURI-D-26-00238R1"
   },
   {
-    icon: Presentation,
-    title: "Thought Leadership",
-    description: "Speaker and contributor to AI discussions, helping shape the conversation around ethical and applied AI systems.",
+    icon: BookCheck,
+    title: "Published STEM Book Author",
+    subtitle: "Young AI Explorers (Amazon UK)",
+    description: "Published 37-chapter educational AI guide for ages 9–12 (ASIN: B0H4KGNW3B). Personally donated physical copies to UK school libraries, verified by Harris Primary Academy Haling Park.",
+    metric: "Amazon UK ASIN",
+    subtext: "B0H4KGNW3B / School Donations"
+  },
+  {
+    icon: ShieldCheck,
+    title: "Commercial Multi-Product Venture",
+    subtitle: "RimansTech Industries",
+    description: "Founded London AI venture shipping 5 proprietary platforms with active Stripe recurring billing, live Vercel Edge deployments, and ticketed London rooftop industry events.",
+    metric: "5 Systems Shipped",
+    subtext: "London Headquarters"
+  },
+  {
+    icon: FileCheck,
+    title: "Open-Source Developer Reach",
+    subtitle: "22 Public GitHub Repositories",
+    description: "Active open-source contributor spanning Vision Transformers, client-side Graph RAG (GitNexus), zero-click browser navigation, and published technical tutorials on Medium.",
+    metric: "22 Public Repos",
+    subtext: "github.com/basseyriman"
   },
 ]
 
 export function KeyAchievementsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5 } },
-  }
-
   return (
-    <section id="achievements" className="py-24 sm:py-32 relative overflow-hidden flex flex-col items-center justify-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-bold mb-16 text-balance flex items-center justify-center gap-4 text-center"
-          >
-            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
-            Key Achievements
-            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
-          </motion.h2>
+    <section id="achievements" className="py-20 bg-background border-b border-border/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <Badge variant="outline" className="mb-3 text-xs font-mono font-medium border-primary/30 text-primary">
+            Verifiable Milestones
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
+            Key Academic & Industry Milestones
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground">
+            Backed by independent clinical evaluations, peer-reviewed scientific submissions, published authorship, and senior enterprise letters.
+          </p>
+        </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
-          >
-            {achievements.map((achievement, index) => {
-              const Icon = achievement.icon
-              return (
-                <motion.div key={index} variants={itemVariants}>
-                  <Card className="p-8 h-full glass hover:bg-white/5 border-white/5 hover:border-primary/50 transition-all duration-500 group flex flex-col items-center text-center">
-                    <div className="mb-6 p-4 rounded-2xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-8 w-8 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {achievements.map((item, idx) => {
+            const Icon = item.icon
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+              >
+                <Card className="p-6 bg-card/60 border-border/60 hover:border-primary/40 transition-all flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="h-10 w-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <Badge variant="secondary" className="font-mono text-xs font-semibold">
+                        {item.metric}
+                      </Badge>
                     </div>
-                    <h3 className="text-xl font-bold mb-4">{achievement.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {achievement.description}
+
+                    <h3 className="text-base font-bold text-foreground mb-0.5">
+                      {item.title}
+                    </h3>
+                    <div className="text-xs text-primary font-mono mb-2.5">
+                      {item.subtitle}
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {item.description}
                     </p>
-                  </Card>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-16 inline-flex items-center gap-2 px-6 py-3 rounded-full glass-darker border border-primary/20 text-primary font-medium"
-          >
-            <CheckCircle2 className="h-5 w-5" />
-            Recognised for Excellence in Applied AI
-          </motion.div>
+                  </div>
+
+                  <div className="pt-3 mt-4 border-t border-border/40 text-[11px] font-mono text-muted-foreground flex items-center justify-between">
+                    <span>{item.subtext}</span>
+                  </div>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
