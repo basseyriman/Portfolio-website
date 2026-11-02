@@ -31,17 +31,17 @@ export function Navigation() {
         
         {/* Brand Signature */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 via-sky-400 to-primary p-[1.5px] shadow-lg shadow-indigo-500/20">
-            <div className="h-full w-full bg-[#080C16] rounded-full flex items-center justify-center font-mono font-bold text-[11px] text-white group-hover:text-sky-400 transition-colors">
+          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-600 p-[1.5px] shadow-lg shadow-amber-500/20">
+            <div className="h-full w-full bg-[#0A0B0E] rounded-full flex items-center justify-center font-mono font-bold text-[11px] text-amber-200 group-hover:text-white transition-colors">
               BR
             </div>
           </div>
           <div className="flex flex-col text-left">
             <span className="text-xs sm:text-sm font-bold tracking-tight text-white flex items-center gap-1.5 leading-none">
               BASSEY RIMAN
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b]" />
             </span>
-            <span className="text-[9px] font-mono text-neutral-400 tracking-wider uppercase mt-0.5">
+            <span className="text-[9px] font-mono text-amber-200/70 tracking-wider uppercase mt-0.5">
               Principal AI Architect
             </span>
           </div>
@@ -64,9 +64,9 @@ export function Navigation() {
         <div className="hidden sm:flex items-center gap-2.5">
           <a
             href="#vault"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono text-neutral-300 bg-white/[0.04] border border-white/10 hover:border-indigo-400/50 hover:text-white transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono text-neutral-300 bg-white/[0.04] border border-white/10 hover:border-primary/50 hover:text-white transition-all"
           >
-            <ShieldCheck className="h-3 w-3 text-sky-400" />
+            <ShieldCheck className="h-3 w-3 text-primary" />
             <span>10 Evidences</span>
           </a>
           <Button

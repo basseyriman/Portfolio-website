@@ -60,7 +60,7 @@ export function HeroSection() {
       
       {/* Cinematic Top Spotlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[280px] bg-gradient-to-b from-indigo-500/20 via-sky-500/10 to-transparent blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[280px] bg-gradient-to-b from-amber-400/20 via-yellow-600/10 to-transparent blur-[120px] rounded-full" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export function HeroSection() {
           
           {/* Executive Tagline Pill */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md mb-8 shadow-inner">
-            <span className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_#f59e0b]" />
             <span className="text-[11px] font-mono tracking-widest uppercase text-neutral-300">
               Principal AI Architect & Tech Founder
             </span>
@@ -105,11 +105,11 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="h-11 px-6 rounded-full bg-white/[0.03] border-white/15 hover:border-white/30 text-white font-mono text-xs gap-2 transition-all"
+              className="h-11 px-6 rounded-full bg-white/[0.03] border-white/15 hover:border-primary/50 text-white font-mono text-xs gap-2 transition-all"
               asChild
             >
               <a href="#vault">
-                <FileText className="h-4 w-4 text-sky-400" />
+                <FileText className="h-4 w-4 text-primary" />
                 Evidence Dossier Vault (10 PDFs)
               </a>
             </Button>
@@ -154,7 +154,7 @@ export function HeroSection() {
                   onClick={() => setActiveTab(idx)}
                   className={`px-5 py-2.5 text-xs font-mono whitespace-nowrap transition-all border-b-2 ${
                     activeTab === idx
-                      ? "border-sky-400 text-white bg-white/[0.04] font-semibold"
+                      ? "border-primary text-white bg-white/[0.04] font-semibold"
                       : "border-transparent text-neutral-400 hover:text-white hover:bg-white/[0.02]"
                   }`}
                 >
@@ -186,7 +186,7 @@ export function HeroSection() {
               </p>
 
               <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-neutral-400 overflow-x-auto">
-                <Cpu className="h-3.5 w-3.5 text-sky-400 shrink-0" />
+                <Cpu className="h-3.5 w-3.5 text-primary shrink-0" />
                 <span className="text-neutral-300 font-mono">{architectureCards[activeTab].stack}</span>
               </div>
             </div>
@@ -199,11 +199,11 @@ export function HeroSection() {
               <div className="text-[11px] text-neutral-400 mt-1">AlzDetect ViT-B/32 MRI Accuracy</div>
             </div>
             <div className="p-4 rounded-xl glass-card">
-              <div className="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono tracking-tight">NEURI-R1</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-primary font-mono tracking-tight">NEURI-R1</div>
               <div className="text-[11px] text-neutral-400 mt-1">Elsevier Paper Under Review</div>
             </div>
             <div className="p-4 rounded-xl glass-card">
-              <div className="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono tracking-tight">GitNexus</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-accent font-mono tracking-tight">GitNexus</div>
               <div className="text-[11px] text-neutral-400 mt-1">Graph RAG Open-Source Contributor</div>
             </div>
             <div className="p-4 rounded-xl glass-card">

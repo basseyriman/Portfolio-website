@@ -4,49 +4,49 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Ultra-Premium Executive Obsidian & Sapphire Theme */
-  --background: oklch(0.08 0.015 260);
-  --foreground: oklch(0.98 0.005 260);
-  --card: oklch(0.12 0.02 260);
-  --card-foreground: oklch(0.98 0.005 260);
-  --popover: oklch(0.12 0.02 260);
-  --popover-foreground: oklch(0.98 0.005 260);
-  --primary: oklch(0.65 0.20 250);
-  --primary-foreground: oklch(0.99 0.005 260);
-  --secondary: oklch(0.16 0.025 260);
-  --secondary-foreground: oklch(0.90 0.01 260);
-  --muted: oklch(0.15 0.02 260);
-  --muted-foreground: oklch(0.68 0.02 260);
-  --accent: oklch(0.70 0.18 195);
-  --accent-foreground: oklch(0.99 0.005 260);
+  /* Ultra-Premium Executive Obsidian & Champagne Titanium Gold Theme */
+  --background: oklch(0.09 0.008 80);
+  --foreground: oklch(0.98 0.005 85);
+  --card: oklch(0.125 0.012 80);
+  --card-foreground: oklch(0.98 0.005 85);
+  --popover: oklch(0.125 0.012 80);
+  --popover-foreground: oklch(0.98 0.005 85);
+  --primary: oklch(0.78 0.125 82);          /* Champagne Titanium Gold #DEC077 */
+  --primary-foreground: oklch(0.12 0.02 80); /* Deep obsidian text for gold buttons */
+  --secondary: oklch(0.16 0.015 80);
+  --secondary-foreground: oklch(0.92 0.01 85);
+  --muted: oklch(0.15 0.012 80);
+  --muted-foreground: oklch(0.68 0.015 85);
+  --accent: oklch(0.86 0.09 85);           /* Soft luminous champagne shimmer #F3E5C2 */
+  --accent-foreground: oklch(0.12 0.02 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.01 265);
-  --border: oklch(0.22 0.025 260);
-  --input: oklch(0.22 0.025 260);
-  --ring: oklch(0.65 0.20 250);
+  --border: oklch(0.24 0.022 80);          /* Refined metallic charcoal/gold border */
+  --input: oklch(0.24 0.022 80);
+  --ring: oklch(0.78 0.125 82);
   --radius: 0.875rem;
 }
 
 .dark {
-  --background: oklch(0.08 0.015 260);
-  --foreground: oklch(0.98 0.005 260);
-  --card: oklch(0.12 0.02 260);
-  --card-foreground: oklch(0.98 0.005 260);
-  --popover: oklch(0.12 0.02 260);
-  --popover-foreground: oklch(0.98 0.005 260);
-  --primary: oklch(0.65 0.20 250);
-  --primary-foreground: oklch(0.99 0.005 260);
-  --secondary: oklch(0.16 0.025 260);
-  --secondary-foreground: oklch(0.90 0.01 260);
-  --muted: oklch(0.15 0.02 260);
-  --muted-foreground: oklch(0.68 0.02 260);
-  --accent: oklch(0.70 0.18 195);
-  --accent-foreground: oklch(0.99 0.005 260);
+  --background: oklch(0.09 0.008 80);
+  --foreground: oklch(0.98 0.005 85);
+  --card: oklch(0.125 0.012 80);
+  --card-foreground: oklch(0.98 0.005 85);
+  --popover: oklch(0.125 0.012 80);
+  --popover-foreground: oklch(0.98 0.005 85);
+  --primary: oklch(0.78 0.125 82);
+  --primary-foreground: oklch(0.12 0.02 80);
+  --secondary: oklch(0.16 0.015 80);
+  --secondary-foreground: oklch(0.92 0.01 85);
+  --muted: oklch(0.15 0.012 80);
+  --muted-foreground: oklch(0.68 0.015 85);
+  --accent: oklch(0.86 0.09 85);
+  --accent-foreground: oklch(0.12 0.02 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0.01 265);
-  --border: oklch(0.22 0.025 260);
-  --input: oklch(0.22 0.025 260);
-  --ring: oklch(0.65 0.20 250);
+  --border: oklch(0.24 0.022 80);
+  --input: oklch(0.24 0.022 80);
+  --ring: oklch(0.78 0.125 82);
 }
 
 @theme inline {
@@ -83,51 +83,51 @@
 
   body {
     @apply bg-background text-foreground min-h-screen relative overflow-x-hidden selection:bg-primary/20 selection:text-white;
-    background-color: #060913;
+    background-color: #07080b;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(99, 102, 241, 0.08), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(6, 182, 212, 0.08), transparent 60%);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(222, 192, 119, 0.12), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 85% 55%, rgba(184, 142, 62, 0.05), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 15% 85%, rgba(222, 192, 119, 0.04), transparent 60%);
     background-attachment: fixed;
   }
 }
 
 @layer utilities {
   .glass-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(222, 192, 119, 0.12);
     box-shadow: 
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.1),
-      0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.08),
+      0 20px 40px -15px rgba(0, 0, 0, 0.7);
   }
 
   .glass-card:hover {
-    border-color: rgba(99, 102, 241, 0.35);
+    border-color: rgba(222, 192, 119, 0.38);
     box-shadow: 
       inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
-      0 25px 50px -12px rgba(59, 130, 246, 0.15);
+      0 25px 50px -12px rgba(222, 192, 119, 0.12);
   }
 
   .glass-dock {
-    background: rgba(10, 14, 26, 0.75);
+    background: rgba(11, 13, 18, 0.82);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(222, 192, 119, 0.16);
     box-shadow: 
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
-      0 20px 40px -10px rgba(0, 0, 0, 0.7);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+      0 20px 40px -10px rgba(0, 0, 0, 0.8);
   }
 
   .text-shine {
-    background: linear-gradient(180deg, #FFFFFF 0%, #A5B4FC 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #E6CA85 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-subtle-glow {
-    text-shadow: 0 0 35px rgba(165, 180, 252, 0.3);
+    text-shadow: 0 0 35px rgba(222, 192, 119, 0.25);
   }
 
   .border-glow {
@@ -137,7 +137,7 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(222, 192, 119, 0.35), transparent);
     border-radius: inherit;
     z-index: -1;
     pointer-events: none;

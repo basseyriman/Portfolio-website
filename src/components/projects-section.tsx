@@ -227,7 +227,7 @@ export function ProjectsSection() {
                     <h3 className="text-2xl font-bold text-foreground tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-sky-400 font-mono mt-0.5">
+                    <p className="text-xs text-primary font-mono mt-0.5">
                       {project.subtitle}
                     </p>
                   </div>
@@ -276,14 +276,14 @@ export function ProjectsSection() {
                     </Button>
                     <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20" asChild>
                       <a href={project.dossier} target="_blank" rel="noopener noreferrer">
-                        <FileText className="h-3.5 w-3.5 text-sky-400" />
+                        <FileText className="h-3.5 w-3.5 text-primary" />
                         3-Page Spec (PDF)
                       </a>
                     </Button>
                     {project.researchDossier && (
-                      <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-indigo-500/20" asChild>
+                      <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20" asChild>
                         <a href={project.researchDossier} target="_blank" rel="noopener noreferrer">
-                          <FileText className="h-3.5 w-3.5 text-indigo-400" />
+                          <FileText className="h-3.5 w-3.5 text-accent" />
                           Elsevier Research (PDF)
                         </a>
                       </Button>

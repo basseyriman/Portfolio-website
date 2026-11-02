@@ -98,7 +98,7 @@ export function MediaSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
-            <Sparkles className="h-3.5 w-3.5 mr-1.5 text-sky-400 inline" />
+            <Sparkles className="h-3.5 w-3.5 mr-1.5 text-primary inline" />
             Thought Leadership & Public Profile
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
@@ -113,7 +113,7 @@ export function MediaSection() {
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-primary flex items-center gap-2 font-mono">
-              <Newspaper className="h-4 w-4 text-sky-400" />
+              <Newspaper className="h-4 w-4 text-primary" />
               Tier-1 National Daily Press Features
             </h3>
             <Button size="sm" variant="ghost" className="text-xs font-mono text-muted-foreground hover:text-foreground" asChild>
@@ -154,7 +154,7 @@ export function MediaSection() {
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-primary flex items-center gap-2 font-mono">
-              <Mic className="h-4 w-4 text-sky-400" />
+              <Mic className="h-4 w-4 text-primary" />
               Keynote Speaking & Industry Events
             </h3>
             <Button size="sm" variant="ghost" className="text-xs font-mono text-muted-foreground hover:text-foreground" asChild>
@@ -179,7 +179,7 @@ export function MediaSection() {
                 <h4 className="text-lg font-bold text-foreground mb-1">
                   {sp.event}
                 </h4>
-                <div className="text-xs text-sky-400 font-medium mb-3">
+                <div className="text-xs text-primary font-medium mb-3">
                   {sp.organizer}
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
@@ -207,7 +207,7 @@ export function MediaSection() {
         {/* 3. Published Articles & Authorship */}
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-primary flex items-center gap-2 mb-6 font-mono">
-            <BookOpen className="h-4 w-4 text-sky-400" />
+            <BookOpen className="h-4 w-4 text-primary" />
             Technical Guides & Published Authorship
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

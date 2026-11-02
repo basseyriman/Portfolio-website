@@ -197,7 +197,7 @@ export function EvidenceVaultSection() {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-14">
           <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
-            <ShieldCheck className="h-3.5 w-3.5 mr-1.5 text-sky-400 inline" />
+            <ShieldCheck className="h-3.5 w-3.5 mr-1.5 text-primary inline" />
             Official Governance & Endorsement Dossier
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
@@ -286,7 +286,7 @@ export function EvidenceVaultSection() {
                   <h4 className="text-base font-bold text-foreground tracking-tight leading-snug">
                     {dossier.title}
                   </h4>
-                  <p className="text-xs text-sky-400 font-mono mt-0.5">
+                  <p className="text-xs text-primary font-mono mt-0.5">
                     {dossier.subtitle}
                   </p>
                   <p className="text-[11px] text-muted-foreground font-mono mt-1">
