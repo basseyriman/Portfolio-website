@@ -56,7 +56,7 @@ const projects: Project[] = [
     statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
     description:
       "Client-side knowledge graph creator and code exploration engine that runs entirely in the browser using WebAssembly. Drop in any GitHub repository or ZIP file to generate an interactive structural graph with a built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for the Nexus AI LangGraph agent (PR #1615) with automated test suites.",
-    image: "/product-ai-quest.png", // or gitnexus screenshot
+    image: "/gitnexus-preview.png",
     technologies: ["TypeScript", "LangGraph", "Graph RAG", "AbortController", "Web Streams", "WASM"],
     authorityTags: ["Graph RAG", "Open-Source Contributor", "Zero-Server WASM", "PR #1615"],
     metrics: [
