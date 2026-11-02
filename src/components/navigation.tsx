@@ -27,12 +27,12 @@ export function Navigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 pb-2 pointer-events-none">
-      <div className="max-w-5xl mx-auto flex items-center justify-between glass-dock rounded-full px-5 py-2.5 pointer-events-auto transition-all duration-300">
+      <div className="max-w-5xl mx-auto flex items-center justify-between glass-dock rounded-2xl px-6 py-2.5 pointer-events-auto transition-all duration-300 border border-primary/20 shadow-2xl">
         
-        {/* Brand Signature */}
+        {/* Brand Signature with Precision Corner */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-600 p-[1.5px] shadow-lg shadow-amber-500/20">
-            <div className="h-full w-full bg-[#0A0B0E] rounded-full flex items-center justify-center font-mono font-bold text-[11px] text-amber-200 group-hover:text-white transition-colors">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-600 p-[1.5px] shadow-lg shadow-amber-500/20">
+            <div className="h-full w-full bg-[#0A0B0E] rounded-[6px] flex items-center justify-center font-mono font-bold text-[11px] text-amber-200 group-hover:text-white transition-colors">
               BR
             </div>
           </div>
@@ -47,31 +47,31 @@ export function Navigation() {
           </div>
         </a>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Nav Links with Architectural Radius */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="px-3.5 py-1.5 text-xs font-mono font-medium text-neutral-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
+              className="px-3.5 py-1.5 text-xs font-mono font-medium text-neutral-300 hover:text-white hover:bg-white/[0.06] rounded-lg transition-all"
             >
               {item.name}
             </a>
           ))}
         </nav>
 
-        {/* Right CTA Actions */}
+        {/* Right CTA Actions with Precision Radius */}
         <div className="hidden sm:flex items-center gap-2.5">
           <a
             href="#vault"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono text-neutral-300 bg-white/[0.04] border border-white/10 hover:border-primary/50 hover:text-white transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-mono text-neutral-300 bg-white/[0.04] border border-white/10 hover:border-primary/50 hover:text-white transition-all"
           >
             <ShieldCheck className="h-3 w-3 text-primary" />
             <span>10 Evidences</span>
           </a>
           <Button
             size="sm"
-            className="h-8 px-4 rounded-full bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-semibold shadow-lg shadow-white/10 transition-all"
+            className="h-8 px-4 rounded-lg bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-bold shadow-md transition-all"
             asChild
           >
             <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
@@ -95,40 +95,42 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            className="md:hidden max-w-sm mx-auto mt-2 glass-dock rounded-2xl p-5 border border-white/10 pointer-events-auto shadow-2xl"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mt-3 max-w-5xl mx-auto glass-dock rounded-2xl p-5 pointer-events-auto border border-primary/20 space-y-3"
           >
-            <div className="space-y-3">
+            <nav className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-sm font-mono text-neutral-300 hover:text-white py-1 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  className="px-3 py-2 text-sm font-mono text-neutral-300 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors"
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
-                <a
-                  href="#vault"
-                  className="w-full text-center py-2 rounded-lg text-xs font-mono bg-white/[0.05] border border-white/10 text-neutral-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  View 10 Evidence Dossiers
+            </nav>
+            <div className="pt-3 border-t border-white/[0.08] flex flex-col gap-2">
+              <a
+                href="#vault"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-mono text-neutral-300 bg-white/[0.04] border border-white/10"
+              >
+                <ShieldCheck className="h-3.5 w-3.5 text-primary" />
+                <span>10 Evidences Dossier</span>
+              </a>
+              <Button
+                size="sm"
+                className="w-full h-9 rounded-lg bg-white text-neutral-950 font-mono text-xs font-bold"
+                asChild
+              >
+                <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
+                  Executive CV (PDF)
                 </a>
-                <a
-                  href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center py-2 rounded-lg text-xs font-mono font-semibold bg-white text-neutral-950"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Download Executive CV (PDF)
-                </a>
-              </div>
+              </Button>
             </div>
           </motion.div>
         )}

@@ -75,7 +75,7 @@ export function HeroSection() {
         <div className="max-w-6xl mx-auto text-center">
           
           {/* Executive Tagline Pill */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md mb-8 shadow-inner">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.1] backdrop-blur-md mb-8 shadow-inner">
             <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_#f59e0b]" />
             <span className="text-[11px] sm:text-xs font-mono tracking-widest uppercase text-neutral-200 font-medium">
               Principal AI Architect & Tech Founder
@@ -102,7 +102,7 @@ export function HeroSection() {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
             <Button
               size="lg"
-              className="h-12 px-7 rounded-full bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-bold shadow-xl shadow-white/10 gap-2 transition-all hover:scale-[1.02]"
+              className="h-12 px-7 rounded-xl bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-bold shadow-xl shadow-white/10 gap-2 transition-all hover:scale-[1.02]"
               asChild
             >
               <a href="#projects">
@@ -113,7 +113,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="h-12 px-7 rounded-full bg-white/[0.03] border-white/15 hover:border-primary/50 text-white font-mono text-xs gap-2 transition-all hover:bg-white/[0.05]"
+              className="h-12 px-7 rounded-xl bg-white/[0.03] border-white/15 hover:border-primary/50 text-white font-mono text-xs gap-2 transition-all hover:bg-white/[0.05]"
               asChild
             >
               <a href="#vault">
@@ -124,7 +124,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="ghost"
-              className="h-12 px-6 rounded-full text-neutral-400 hover:text-white hover:bg-white/[0.05] font-mono text-xs gap-2 transition-all"
+              className="h-12 px-6 rounded-xl text-neutral-400 hover:text-white hover:bg-white/[0.05] font-mono text-xs gap-2 transition-all"
               asChild
             >
               <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
