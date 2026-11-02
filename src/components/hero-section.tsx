@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Download, FileText, Sparkles, MapPin, ExternalLink, Activity, ShieldCheck, Cpu, Code2, GraduationCap, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Download, FileText, ExternalLink, Cpu } from "lucide-react"
 
 const architectureCards = [
   {
@@ -11,12 +11,13 @@ const architectureCards = [
     name: "AlzDetect ViT-B/32",
     domain: "Clinical Neuroimaging",
     statusBadge: "ELSEVIER NEURI-D-26-00260R1",
-    statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
-    keyMetric: "99.00% Test Accuracy",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
+    keyMetricNumber: "99.00%",
+    keyMetricLabel: "Test Accuracy",
     secondaryMetric: "0.9994 ROC-AUC",
     stack: "PyTorch • ViT-B/32 • 12-Layer Attention Rollout • Grad-CAM • FastAPI",
     summary: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer). Classifies 4 Alzheimer's stages across 5,120 brain MRIs with physician explainability. 51-page revision with comprehensive reviewer responses submitted.",
-    verificationNote: "Evaluated on 5,120 Brain MRIs (NHS Clinical Evaluation)",
+    verificationNote: "5,120 Brain MRIs Evaluated (NHS)",
     liveHref: "https://www.alzdetect.live/"
   },
   {
@@ -24,12 +25,13 @@ const architectureCards = [
     name: "GitNexus Graph RAG",
     domain: "Open-Source Code Intelligence",
     statusBadge: "TRENDING OPEN SOURCE",
-    statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
-    keyMetric: "Zero-Server WASM",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
+    keyMetricNumber: "Zero-Server",
+    keyMetricLabel: "WASM Engine",
     secondaryMetric: "PR #1615 Contributed",
     stack: "TypeScript • LangGraph • AbortController • Graph Algorithms • Browser Streams",
     summary: "Zero-server in-browser code intelligence and knowledge graph creator with built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for Nexus AI agent with test suite.",
-    verificationNote: "Client-Side Zero-Server Sandbox (Open Source)",
+    verificationNote: "Client-Side Zero-Server Sandbox (OSS)",
     liveHref: "https://github.com/basseyriman/GitNexus"
   },
   {
@@ -37,12 +39,13 @@ const architectureCards = [
     name: "AI Quest Simulation",
     domain: "ML Lifecycle Engine",
     statusBadge: "LONDON ROOFTOP EVENT",
-    statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
-    keyMetric: "240 Vector Cards",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
+    keyMetricNumber: "240",
+    keyMetricLabel: "Vector Cards Shipped",
     secondaryMetric: "15 ML Domains",
     stack: "React 19 • WebAudio DSP • 300 DPI Prepress • Directed Acyclic Graph",
     summary: "Models the end-to-end 7-stage ML lifecycle with zero-scroll mobile cockpit. Official ticketed industry playtesting event hosted at cloudM Rooftop Bar, citizenM Tower of London.",
-    verificationNote: "London Rooftop Industry Event (cloudM Tower of London)",
+    verificationNote: "cloudM Tower of London Event",
     liveHref: "https://www.aiquestgame.com/"
   },
   {
@@ -51,11 +54,12 @@ const architectureCards = [
     domain: "Autonomous Browser Agent",
     statusBadge: "CHROME MV3 READY",
     statusColor: "text-primary bg-primary/10 border-primary/30",
-    keyMetric: "Zero Auto-Clicks",
+    keyMetricNumber: "Zero",
+    keyMetricLabel: "Auto-Clicks Guarantee",
     secondaryMetric: "<150ms DOM Mut",
     stack: "Chrome Manifest V3 • Node.js / Express • GPT-4o • SVG Pointer Overlay",
     summary: "Enterprise web navigation assistant. Strict 'Zero Auto-Clicks' security model: Pointly highlights target controls with SVG pointers while the human user executes clicks.",
-    verificationNote: "Enterprise Guide-Only Safety Contract (Manifest V3)",
+    verificationNote: "Manifest V3 Enterprise Security",
     liveHref: "https://www.gopointly.com/"
   }
 ]
@@ -64,11 +68,11 @@ export function HeroSection() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center pt-36 pb-24 overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center justify-center pt-36 pb-24 overflow-hidden">
       
-      {/* Cinematic Top Ambient Spotlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[360px] bg-gradient-to-b from-amber-400/18 via-yellow-600/8 to-transparent blur-[140px] rounded-full" />
+      {/* Subtle Top Platinum/Champagne Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[320px] bg-gradient-to-b from-white/[0.06] via-primary/5 to-transparent blur-[140px] rounded-full" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +80,7 @@ export function HeroSection() {
           
           {/* Executive Tagline Pill */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.1] backdrop-blur-md mb-8 shadow-inner">
-            <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_#f59e0b]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
             <span className="text-[11px] sm:text-xs font-mono tracking-widest uppercase text-neutral-200 font-medium">
               Principal AI Architect & Tech Founder
             </span>
@@ -84,18 +88,19 @@ export function HeroSection() {
             <span className="text-[11px] sm:text-xs font-mono text-neutral-400">London, United Kingdom</span>
           </div>
 
-          {/* Master Headline - Expansive, Unconfined */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-white leading-[1.08] mb-8 max-w-5xl mx-auto">
+          {/* Symmetrical Master Headline - Editorial & Razor-Sharp */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[70px] font-bold tracking-[-0.035em] text-white leading-[1.12] mb-8 max-w-5xl mx-auto">
             Architecting{" "}
-            <span className="text-shine text-subtle-glow">
+            <span className="text-shine">
               Autonomous AI
             </span>{" "}
-            & Clinical Deep Learning.
+            <br className="hidden md:inline" />
+            &amp; Clinical Deep Learning.
           </h1>
 
-          {/* Subtitle - Spacious and Balanced */}
-          <p className="text-base sm:text-xl text-neutral-300/90 max-w-4xl mx-auto mb-12 leading-relaxed font-normal">
-            Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4 decoration-primary/40 font-semibold transition-colors">RimansTech Industries</a>. MSc in Artificial Intelligence with Distinction (Teesside University). Translating Vision Transformers, browser agents, and Graph RAG into production systems evaluated by NHS clinicians and under review at <strong className="text-white font-medium">Elsevier Neuroscience Informatics</strong>.
+          {/* Subtitle - Clean Editorial Line-Height */}
+          <p className="text-base sm:text-lg text-neutral-300/90 max-w-4xl mx-auto mb-12 leading-relaxed font-normal">
+            Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary underline underline-offset-4 decoration-white/20 font-semibold transition-colors">RimansTech Industries</a>. MSc in Artificial Intelligence with Distinction (Teesside University). Translating Vision Transformers, browser agents, and Graph RAG into production systems evaluated by NHS clinicians and under review at <strong className="text-white font-medium">Elsevier Neuroscience Informatics</strong>.
           </p>
 
           {/* Action CTAs */}
@@ -135,7 +140,7 @@ export function HeroSection() {
           </div>
 
           {/* Panoramic Architectural Command Unit */}
-          <div className="max-w-5xl mx-auto rounded-2xl glass-card overflow-hidden text-left mb-12 border border-primary/20 shadow-2xl">
+          <div className="max-w-5xl mx-auto rounded-2xl glass-card overflow-hidden text-left mb-12 border border-white/[0.1] shadow-2xl">
             {/* Header / Traffic lights */}
             <div className="flex items-center justify-between px-6 py-3.5 border-b border-white/[0.08] bg-white/[0.02]">
               <div className="flex items-center gap-2.5">
@@ -166,7 +171,7 @@ export function HeroSection() {
                       : "border-transparent text-neutral-400 hover:text-white hover:bg-white/[0.02]"
                   }`}
                 >
-                  <span className={`h-1.5 w-1.5 rounded-full ${activeTab === idx ? "bg-primary shadow-[0_0_6px_#DEC077]" : "bg-neutral-600"}`} />
+                  <span className={`h-1.5 w-1.5 rounded-full ${activeTab === idx ? "bg-primary" : "bg-neutral-600"}`} />
                   {card.name}
                 </button>
               ))}
@@ -174,15 +179,15 @@ export function HeroSection() {
 
             {/* Panoramic Active Content: 2-Column Desktop Grid */}
             <div className="p-6 sm:p-8 font-mono">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                {/* Left: Summary & System Details */}
+                {/* Left: Summary & System Details (7 cols) */}
                 <div className="lg:col-span-7 space-y-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs text-neutral-300 font-medium">
+                    <span className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/10 text-xs text-neutral-300 font-medium">
                       {architectureCards[activeTab].domain}
                     </span>
-                    <span className={`text-[10px] px-3 py-1 rounded-full border font-bold ${architectureCards[activeTab].statusColor}`}>
+                    <span className={`text-[10px] px-3 py-1 rounded-md border font-semibold ${architectureCards[activeTab].statusColor}`}>
                       {architectureCards[activeTab].statusBadge}
                     </span>
                   </div>
@@ -199,27 +204,28 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                {/* Right: Key Telemetry Metric Card */}
-                <div className="lg:col-span-5 p-5 rounded-xl bg-black/50 border border-primary/25 space-y-3">
+                {/* Right: Key Telemetry Metric Card (5 cols) - Razor Sharp & No Overflow */}
+                <div className="lg:col-span-5 p-5 rounded-xl bg-white/[0.02] border border-white/[0.08] space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400">BENCHMARK PERFORMANCE</span>
-                    <span className="text-[10px] font-mono text-emerald-400">VERIFIED</span>
+                    <span className="text-[10px] font-mono text-emerald-400 font-semibold">VERIFIED</span>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-primary font-mono tracking-tight">
-                      {architectureCards[activeTab].keyMetric}
+                    <div className="text-3xl font-extrabold text-white font-mono tracking-tight flex items-baseline gap-2">
+                      <span>{architectureCards[activeTab].keyMetricNumber}</span>
+                      <span className="text-sm font-normal text-primary">{architectureCards[activeTab].keyMetricLabel}</span>
                     </div>
-                    <div className="text-xs text-neutral-400 font-mono mt-0.5">
-                      Metric 02: <span className="text-white font-bold">{architectureCards[activeTab].secondaryMetric}</span>
+                    <div className="text-xs text-neutral-400 font-mono mt-1">
+                      Secondary Metric: <span className="text-white font-semibold">{architectureCards[activeTab].secondaryMetric}</span>
                     </div>
                   </div>
-                  <div className="pt-2 border-t border-white/[0.08] text-[11px] text-neutral-400 flex items-center justify-between">
-                    <span className="truncate">{architectureCards[activeTab].verificationNote}</span>
+                  <div className="pt-2.5 border-t border-white/[0.08] text-[11px] text-neutral-300 font-mono flex items-center justify-between gap-2">
+                    <span>{architectureCards[activeTab].verificationNote}</span>
                     <a
                       href={architectureCards[activeTab].liveHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline inline-flex items-center gap-1 font-bold shrink-0 ml-2"
+                      className="text-white hover:text-primary transition-colors inline-flex items-center gap-1 font-bold shrink-0"
                     >
                       Inspect <ExternalLink className="h-3 w-3" />
                     </a>
@@ -230,21 +236,21 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Institutional Metric Ribbon - Expanded */}
+          {/* Institutional Metric Ribbon - Swiss Instrument Cluster */}
           <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
-            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
+            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-white/20 transition-colors">
               <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">99.00%</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">AlzDetect ViT-B/32 MRI Accuracy</div>
             </div>
-            <div className="p-5 rounded-xl glass-card border border-primary/25 hover:border-primary/50 transition-colors">
+            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
               <div className="text-3xl sm:text-4xl font-extrabold text-primary font-mono tracking-tight">NEURI-R1</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">Elsevier Paper Under Review</div>
             </div>
-            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
-              <div className="text-3xl sm:text-4xl font-extrabold text-neutral-100 font-mono tracking-tight">GitNexus</div>
+            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-white/20 transition-colors">
+              <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">GitNexus</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">Graph RAG Open-Source Contributor</div>
             </div>
-            <div className="p-5 rounded-xl glass-card border border-primary/25 hover:border-primary/50 transition-colors">
+            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
               <div className="text-3xl sm:text-4xl font-extrabold text-primary font-mono tracking-tight">Distinction</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">MSc Artificial Intelligence (UK)</div>
             </div>
