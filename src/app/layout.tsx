@@ -8,9 +8,9 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" })
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bassey Riman | Strategic AI Leader & Machine Learning Engineer",
+  title: "Bassey Riman | Principal AI Architect & Tech Founder",
   description:
-    "AI Engineer specializing in Vision Transformers and Healthcare AI. Featured in national publications (ThisDay, The Nation, Vanguard) for work in healthcare AI and AI education.",
+    "Principal AI Architect and Founder of RimansTech Industries (London, UK). Architect of AlzDetect (99.00% ViT-B/32, Elsevier NEURI-D-26-00260R1), GitNexus Graph RAG open-source contributor, and author of Young AI Explorers.",
   icons: {
     icon: [
       {
