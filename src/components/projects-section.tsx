@@ -205,9 +205,9 @@ export function ProjectsSection() {
         {/* Project Cards Stack */}
         <div className="space-y-10 max-w-5xl mx-auto">
           {filteredProjects.map((project) => (
-            <Card 
+            <div 
               key={project.id}
-              className="overflow-hidden border-border/70 bg-card/70 backdrop-blur-md hover:border-primary/50 transition-all duration-300 shadow-xl"
+              className="glass-card rounded-2xl overflow-hidden p-1 transition-all duration-300"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center">
                 {/* Left Column: Details */}
@@ -302,7 +302,7 @@ export function ProjectsSection() {
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

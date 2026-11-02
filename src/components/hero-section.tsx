@@ -1,225 +1,214 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Download, FileText, Sparkles, MapPin, ExternalLink, Terminal, Activity, ShieldCheck, Cpu, Code2, GraduationCap } from "lucide-react"
-import { motion } from "framer-motion"
-import { useState } from "react"
+import { ArrowRight, Download, FileText, Sparkles, MapPin, ExternalLink, Activity, ShieldCheck, Cpu, Code2, GraduationCap, CheckCircle2 } from "lucide-react"
 
-const telemetryData = [
+const architectureCards = [
   {
     id: "alzdetect",
     name: "AlzDetect ViT-B/32",
-    badge: "Clinical Neuroimaging",
-    status: "ELSEVIER NEURI-D-26-00260R1",
+    domain: "Clinical Neuroimaging",
+    statusBadge: "ELSEVIER NEURI-D-26-00260R1",
     statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
-    metric1: "99.00% Test Accuracy",
-    metric2: "0.9994 ROC-AUC",
+    keyMetric: "99.00% Test Accuracy",
+    secondaryMetric: "0.9994 ROC-AUC",
     stack: "PyTorch • ViT-B/32 • 12-Layer Attention Rollout • Grad-CAM • FastAPI",
-    description: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer). Detects 4 Alzheimer's stages across 5,120 brain MRIs with clinician explainability. 51-page revision with comprehensive reviewer responses submitted."
+    summary: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer). Classifies 4 Alzheimer's stages across 5,120 brain MRIs with physician explainability. 51-page revision with comprehensive reviewer responses submitted."
   },
   {
     id: "gitnexus",
     name: "GitNexus Graph RAG",
-    badge: "Open-Source Code Intelligence",
-    status: "TRENDING OPEN SOURCE",
+    domain: "Open-Source Code Intelligence",
+    statusBadge: "TRENDING OPEN SOURCE",
     statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
-    metric1: "Client-Side Graph RAG",
-    metric2: "PR #1615 Contributed",
+    keyMetric: "Zero-Server WASM",
+    secondaryMetric: "PR #1615 Contributed",
     stack: "TypeScript • LangGraph • AbortController • Graph Algorithms • Browser Streams",
-    description: "Zero-server in-browser code intelligence and knowledge graph creator with built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for Nexus AI agent with test suite."
+    summary: "Zero-server in-browser code intelligence and knowledge graph creator with built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for Nexus AI agent with test suite."
+  },
+  {
+    id: "aiquest",
+    name: "AI Quest Simulation",
+    domain: "ML Lifecycle Engine",
+    statusBadge: "LONDON ROOFTOP EVENT",
+    statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
+    keyMetric: "240 Vector Cards",
+    secondaryMetric: "15 ML Domains",
+    stack: "React 19 • WebAudio DSP • 300 DPI Prepress • Directed Acyclic Graph",
+    summary: "Models the end-to-end 7-stage ML lifecycle with zero-scroll mobile cockpit. Official ticketed industry playtesting event hosted at cloudM Rooftop Bar, citizenM Tower of London."
   },
   {
     id: "pointly",
     name: "Pointly Assistant",
-    badge: "Autonomous Browser Agent",
-    status: "CHROME MV3 READY",
+    domain: "Autonomous Browser Agent",
+    statusBadge: "CHROME MV3 READY",
     statusColor: "text-sky-400 bg-sky-500/10 border-sky-500/30",
-    metric1: "Zero Auto-Clicks",
-    metric2: "<150ms DOM Mut",
+    keyMetric: "Zero Auto-Clicks",
+    secondaryMetric: "<150ms DOM Mut",
     stack: "Chrome Manifest V3 • Node.js / Express • GPT-4o • SVG Pointer Overlay",
-    description: "Enterprise web navigation assistant. Strict 'Zero Auto-Clicks' security model: Pointly projects high-precision SVG pointers over target controls while the human user executes clicks."
-  },
-  {
-    id: "voicedress",
-    name: "VoiceDress AI",
-    badge: "Multimodal GenAI PWA",
-    status: "STRIPE MONETIZED",
-    statusColor: "text-purple-400 bg-purple-500/10 border-purple-500/30",
-    metric1: "Two-Stage Diffusion",
-    metric2: "£19/mo & £149/yr",
-    stack: "Next.js 16 • fal.ai / FASHN • WebKit Audio API • Firebase • Stripe",
-    description: "Voice-driven wardrobe stylist and layered virtual try-on engine. Multi-stage sequential diffusion onto real photographs with active recurring Stripe monetization tiers."
-  },
-  {
-    id: "aiquest",
-    name: "AI Quest Platform",
-    badge: "ML Simulation Engine",
-    status: "LONDON ROOFTOP EVENT",
-    statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
-    metric1: "240 Card Engine",
-    metric2: "15 ML Domains",
-    stack: "React 19 • WebAudio DSP • 300 DPI Prepress • Directed Acyclic Graph",
-    description: "Simulates full 7-stage ML lifecycle across 240 vector cards and zero-scroll mobile cockpit. Official industry playtesting showcase hosted at cloudM Rooftop Bar, citizenM Tower of London."
+    summary: "Enterprise web navigation assistant. Strict 'Zero Auto-Clicks' security model: Pointly highlights target controls with SVG pointers while the human user executes clicks."
   }
 ]
 
 export function HeroSection() {
-  const [activeTelemetry, setActiveTelemetry] = useState(0)
+  const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Ambient Lighting Gradients */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/15 rounded-full blur-[120px]" />
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-sky-500/10 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 right-1/4 w-[450px] h-[320px] bg-indigo-500/10 rounded-full blur-[110px]" />
+    <section className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
+      
+      {/* Cinematic Top Spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[280px] bg-gradient-to-b from-indigo-500/20 via-sky-500/10 to-transparent blur-[120px] rounded-full" />
       </div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800d_1px,transparent_1px),linear-gradient(to_bottom,#8080800d_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* Identity & Credential Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-            <Badge variant="outline" className="px-3.5 py-1 text-xs font-mono font-medium border-primary/40 bg-primary/10 text-primary shadow-sm shadow-primary/20">
-              <Sparkles className="h-3 w-3 mr-1.5 inline text-sky-400" />
-              Founder & Principal AI Architect
-            </Badge>
-            <Badge variant="secondary" className="px-3 py-1 text-xs font-mono border border-border/80 text-foreground/90">
-              <MapPin className="h-3 w-3 mr-1 inline text-sky-400" />
-              London, United Kingdom
-            </Badge>
-            <Badge variant="outline" className="px-3 py-1 text-xs font-mono border-emerald-500/40 text-emerald-300 bg-emerald-500/10">
-              <GraduationCap className="h-3.5 w-3.5 mr-1 inline text-emerald-400" />
-              MSc AI Distinction • Teesside University
-            </Badge>
-            <Badge variant="outline" className="px-3 py-1 text-xs font-mono border-indigo-500/40 text-indigo-300 bg-indigo-500/10">
-              <ShieldCheck className="h-3 w-3 mr-1 inline text-indigo-400" />
-              Tech Nation Candidate
-            </Badge>
+          {/* Executive Tagline Pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] backdrop-blur-md mb-8 shadow-inner">
+            <span className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse" />
+            <span className="text-[11px] font-mono tracking-widest uppercase text-neutral-300">
+              Principal AI Architect & Tech Founder
+            </span>
+            <span className="text-neutral-600">•</span>
+            <span className="text-[11px] font-mono text-neutral-400">London, United Kingdom</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-6 leading-[1.1]">
-            Engineering{" "}
-            <span className="bg-gradient-to-r from-sky-400 via-indigo-300 to-primary bg-clip-text text-transparent">
-              Intelligent Systems
+          {/* Master Headline */}
+          <h1 className="text-4xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-white leading-[1.08] mb-7">
+            Architecting{" "}
+            <span className="text-shine text-subtle-glow">
+              Autonomous AI
             </span>{" "}
-            That Ship to Production.
+            & Clinical Deep Learning.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            I architect, benchmark, and deploy mission-critical Artificial Intelligence systems spanning <strong className="text-foreground">Clinical Neuroimaging (ViT-B/32)</strong>, <strong className="text-foreground">In-Browser Graph RAG (GitNexus)</strong>, <strong className="text-foreground">Autonomous Browser Agents (MV3)</strong>, and <strong className="text-foreground">Multimodal GenAI</strong>. Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a> and author of <em>Young AI Explorers</em>.
+          <p className="text-base sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+            Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sky-300 underline underline-offset-4 decoration-neutral-600 transition-colors">RimansTech Industries</a>. MSc in Artificial Intelligence with Distinction (Teesside University). Translating Vision Transformers, browser agents, and Graph RAG into production systems evaluated by NHS clinicians and under review at <strong className="text-neutral-200 font-medium">Elsevier Neuroscience Informatics</strong>.
           </p>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">
-            <Button size="lg" className="gap-2 font-mono text-sm shadow-xl shadow-primary/25 bg-primary hover:bg-primary/90" asChild>
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-3.5 mb-14">
+            <Button
+              size="lg"
+              className="h-11 px-6 rounded-full bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-semibold shadow-xl shadow-white/10 gap-2 transition-all"
+              asChild
+            >
               <a href="#projects">
                 Explore Shipped Systems
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="gap-2 font-mono text-sm border-primary/50 text-foreground hover:bg-primary/10 shadow-sm" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-11 px-6 rounded-full bg-white/[0.03] border-white/15 hover:border-white/30 text-white font-mono text-xs gap-2 transition-all"
+              asChild
+            >
               <a href="#vault">
                 <FileText className="h-4 w-4 text-sky-400" />
                 Evidence Dossier Vault (10 PDFs)
               </a>
             </Button>
-            <Button size="lg" variant="secondary" className="gap-2 font-mono text-sm text-foreground hover:bg-muted" asChild>
+            <Button
+              size="lg"
+              variant="ghost"
+              className="h-11 px-5 rounded-full text-neutral-400 hover:text-white hover:bg-white/[0.05] font-mono text-xs gap-2 transition-all"
+              asChild
+            >
               <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="h-4 w-4 text-primary" />
-                Executive CV (PDF)
+                <Download className="h-4 w-4 text-neutral-300" />
+                Executive CV
               </a>
             </Button>
           </div>
 
-          {/* Live Architecture & Telemetry Terminal */}
-          <div className="max-w-3xl mx-auto mb-10 rounded-xl border border-border/80 bg-black/60 backdrop-blur-xl shadow-2xl overflow-hidden text-left">
-            {/* Terminal Header */}
-            <div className="flex items-center justify-between px-4 py-2.5 bg-neutral-900/80 border-b border-border/60">
+          {/* Signature Architectural Bento Unit */}
+          <div className="max-w-3xl mx-auto rounded-2xl glass-card overflow-hidden text-left mb-14">
+            {/* Header / Tabs */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/[0.08] bg-white/[0.02]">
               <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-500/80" />
-                <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 text-xs font-mono text-muted-foreground flex items-center gap-1.5">
-                  <Terminal className="h-3.5 w-3.5 text-primary" />
-                  architecture_telemetry.live // RimansTech AI Core
+                <div className="flex gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                </div>
+                <span className="ml-3 text-[11px] font-mono text-neutral-400">
+                  architecture_telemetry // core systems
                 </span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Activity className="h-3 w-3 text-emerald-400 animate-pulse" />
-                <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">All Systems Nominal</span>
+              <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>ONLINE // PRODUCTION READY</span>
               </div>
             </div>
 
-            {/* Terminal Tabs */}
-            <div className="flex border-b border-border/50 bg-black/40 overflow-x-auto">
-              {telemetryData.map((item, idx) => (
+            {/* Selector Tabs */}
+            <div className="flex border-b border-white/[0.06] bg-black/30 overflow-x-auto">
+              {architectureCards.map((card, idx) => (
                 <button
-                  key={item.id}
-                  onClick={() => setActiveTelemetry(idx)}
-                  className={`px-4 py-2 text-xs font-mono whitespace-nowrap transition-all border-b-2 ${
-                    activeTelemetry === idx
-                      ? "border-primary text-foreground bg-primary/10 font-bold"
-                      : "border-transparent text-muted-foreground hover:text-foreground hover:bg-neutral-800/40"
+                  key={card.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`px-5 py-2.5 text-xs font-mono whitespace-nowrap transition-all border-b-2 ${
+                    activeTab === idx
+                      ? "border-sky-400 text-white bg-white/[0.04] font-semibold"
+                      : "border-transparent text-neutral-400 hover:text-white hover:bg-white/[0.02]"
                   }`}
                 >
-                  {item.name}
+                  {card.name}
                 </button>
               ))}
             </div>
 
-            {/* Terminal Body */}
-            <div className="p-4 sm:p-5 font-mono text-xs space-y-3">
+            {/* Active Content */}
+            <div className="p-6 font-mono space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <Badge variant="outline" className="text-[11px] border-primary/40 text-primary bg-primary/5">
-                    {telemetryData[activeTelemetry].badge}
-                  </Badge>
-                  <span className={`text-[10px] px-2 py-0.5 rounded border font-semibold ${telemetryData[activeTelemetry].statusColor}`}>
-                    {telemetryData[activeTelemetry].status}
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/10 text-[11px] text-neutral-300">
+                    {architectureCards[activeTab].domain}
+                  </span>
+                  <span className={`text-[10px] px-2.5 py-0.5 rounded-full border font-semibold ${architectureCards[activeTab].statusColor}`}>
+                    {architectureCards[activeTab].statusBadge}
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="text-foreground font-bold">{telemetryData[activeTelemetry].metric1}</span>
-                  <span>•</span>
-                  <span className="text-foreground font-bold">{telemetryData[activeTelemetry].metric2}</span>
+                <div className="flex items-center gap-3 text-xs text-neutral-400">
+                  <span className="text-white font-bold">{architectureCards[activeTab].keyMetric}</span>
+                  <span className="text-neutral-600">•</span>
+                  <span className="text-white font-bold">{architectureCards[activeTab].secondaryMetric}</span>
                 </div>
               </div>
 
-              <p className="text-muted-foreground leading-relaxed font-sans text-xs sm:text-sm">
-                {telemetryData[activeTelemetry].description}
+              <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed">
+                {architectureCards[activeTab].summary}
               </p>
 
-              <div className="pt-2 border-t border-border/40 text-[11px] text-muted-foreground flex items-center gap-2 overflow-x-auto">
+              <div className="pt-3 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-neutral-400 overflow-x-auto">
                 <Cpu className="h-3.5 w-3.5 text-sky-400 shrink-0" />
-                <span className="text-foreground/80 font-mono">{telemetryData[activeTelemetry].stack}</span>
+                <span className="text-neutral-300 font-mono">{architectureCards[activeTab].stack}</span>
               </div>
             </div>
           </div>
 
-          {/* Key Metric Highlights Grid */}
+          {/* Institutional Metric Ribbon */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
-            <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-sky-400">99.00%</div>
-              <div className="text-xs text-muted-foreground mt-1">AlzDetect ViT-B/32 Accuracy (5,120 MRIs)</div>
+            <div className="p-4 rounded-xl glass-card">
+              <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight">99.00%</div>
+              <div className="text-[11px] text-neutral-400 mt-1">AlzDetect ViT-B/32 MRI Accuracy</div>
             </div>
-            <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-indigo-400">GitNexus</div>
-              <div className="text-xs text-muted-foreground mt-1">Graph RAG Open-Source Contribution</div>
+            <div className="p-4 rounded-xl glass-card">
+              <div className="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono tracking-tight">NEURI-R1</div>
+              <div className="text-[11px] text-neutral-400 mt-1">Elsevier Paper Under Review</div>
             </div>
-            <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-emerald-400">Distinction</div>
-              <div className="text-xs text-muted-foreground mt-1">MSc Artificial Intelligence (Teesside)</div>
+            <div className="p-4 rounded-xl glass-card">
+              <div className="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono tracking-tight">GitNexus</div>
+              <div className="text-[11px] text-neutral-400 mt-1">Graph RAG Open-Source Contributor</div>
             </div>
-            <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-amber-400">10 / 10</div>
-              <div className="text-xs text-muted-foreground mt-1">Tech Nation Endorsement Dossiers</div>
+            <div className="p-4 rounded-xl glass-card">
+              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">Distinction</div>
+              <div className="text-[11px] text-neutral-400 mt-1">MSc Artificial Intelligence (UK)</div>
             </div>
           </div>
 

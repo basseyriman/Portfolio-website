@@ -2,16 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ArrowUpRight, ShieldCheck, FileText } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { name: "Shipped Systems", href: "#projects" },
   { name: "Evidence Vault", href: "#vault" },
-  { name: "Press & Keynotes", href: "#recognition" },
+  { name: "Keynotes & Press", href: "#recognition" },
   { name: "Milestones", href: "#achievements" },
   { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
 ]
 
 export function Navigation() {
@@ -20,121 +19,120 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40)
+      setIsScrolled(window.scrollY > 30)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "h-16 glass-darker border-b border-border/80 shadow-2xl"
-          : "h-20 bg-background/60 backdrop-blur-md border-b border-border/30"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-between h-full">
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-3 group"
-          >
-            <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-primary via-indigo-500 to-sky-400 p-[1.5px] shadow-lg shadow-primary/20">
-              <div className="h-full w-full bg-background rounded-[7px] flex items-center justify-center font-mono font-bold text-xs text-foreground group-hover:text-primary transition-colors">
-                BR
-              </div>
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-base font-bold tracking-tight text-foreground leading-none flex items-center gap-1.5">
-                BASSEY RIMAN
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              </span>
-              <span className="text-[10px] font-mono text-muted-foreground tracking-wider uppercase mt-0.5">
-                Principal AI Architect
-              </span>
-            </div>
-          </motion.a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="px-3.5 py-1.5 text-xs font-mono font-medium text-muted-foreground hover:text-foreground hover:bg-card/60 rounded-md transition-all relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              </a>
-            ))}
-
-            <div className="ml-3 flex items-center gap-2 border-l border-border/60 pl-3">
-              <Button size="sm" variant="outline" className="text-xs font-mono gap-1.5 border-primary/40 hover:bg-primary/10" asChild>
-                <a href="#vault">
-                  <span className="h-2 w-2 rounded-full bg-primary animate-ping" />
-                  10 Evidences
-                </a>
-              </Button>
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-xs font-mono shadow-md shadow-primary/25" asChild>
-                <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
-                  Executive CV
-                </a>
-              </Button>
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4 pb-2 pointer-events-none">
+      <div className="max-w-5xl mx-auto flex items-center justify-between glass-dock rounded-full px-5 py-2.5 pointer-events-auto transition-all duration-300">
+        
+        {/* Brand Signature */}
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-indigo-500 via-sky-400 to-primary p-[1.5px] shadow-lg shadow-indigo-500/20">
+            <div className="h-full w-full bg-[#080C16] rounded-full flex items-center justify-center font-mono font-bold text-[11px] text-white group-hover:text-sky-400 transition-colors">
+              BR
             </div>
           </div>
+          <div className="flex flex-col text-left">
+            <span className="text-xs sm:text-sm font-bold tracking-tight text-white flex items-center gap-1.5 leading-none">
+              BASSEY RIMAN
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+            </span>
+            <span className="text-[9px] font-mono text-neutral-400 tracking-wider uppercase mt-0.5">
+              Principal AI Architect
+            </span>
+          </div>
+        </a>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        {/* Desktop Nav Links */}
+        <nav className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="px-3.5 py-1.5 text-xs font-mono font-medium text-neutral-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
+            >
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right CTA Actions */}
+        <div className="hidden sm:flex items-center gap-2.5">
+          <a
+            href="#vault"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono text-neutral-300 bg-white/[0.04] border border-white/10 hover:border-indigo-400/50 hover:text-white transition-all"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <ShieldCheck className="h-3 w-3 text-sky-400" />
+            <span>10 Evidences</span>
+          </a>
+          <Button
+            size="sm"
+            className="h-8 px-4 rounded-full bg-white text-neutral-950 hover:bg-neutral-200 font-mono text-xs font-semibold shadow-lg shadow-white/10 transition-all"
+            asChild
+          >
+            <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
+              Executive CV
+            </a>
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden glass-darker overflow-hidden rounded-2xl mt-2 border border-border/80"
-            >
-              <div className="py-6 px-4 space-y-4">
-                {navItems.map((item, i) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 * i }}
-                    className="block text-sm font-mono font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-                <div className="pt-2 flex flex-col gap-2">
-                  <Button size="sm" variant="outline" className="w-full text-xs font-mono" asChild>
-                    <a href="#vault" onClick={() => setIsMobileMenuOpen(false)}>Evidence Vault (10 Dossiers)</a>
-                  </Button>
-                  <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-xs font-mono" asChild>
-                    <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
-                      Download Executive CV (PDF)
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Mobile Hamburger */}
+        <button
+          className="md:hidden p-1.5 text-neutral-300 hover:text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+
       </div>
-    </nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            className="md:hidden max-w-sm mx-auto mt-2 glass-dock rounded-2xl p-5 border border-white/10 pointer-events-auto shadow-2xl"
+          >
+            <div className="space-y-3">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm font-mono text-neutral-300 hover:text-white py-1 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+              <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+                <a
+                  href="#vault"
+                  className="w-full text-center py-2 rounded-lg text-xs font-mono bg-white/[0.05] border border-white/10 text-neutral-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  View 10 Evidence Dossiers
+                </a>
+                <a
+                  href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-2 rounded-lg text-xs font-mono font-semibold bg-white text-neutral-950"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Download Executive CV (PDF)
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }
