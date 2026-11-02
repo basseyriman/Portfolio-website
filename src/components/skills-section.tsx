@@ -1,56 +1,61 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Brain, Code, Database, Sparkles } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Brain, Code, Database, Sparkles, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 
 const skillCategories = [
   {
     icon: Brain,
     title: "Clinical AI & Medical Vision",
+    badge: "Neuroimaging & XAI",
     skills: [
-      "Clinical Image Analysis",
-      "MRI & Medical Data Processing",
-      "Vision Transformers (ViT)",
-      "Disease Prediction Models",
-      "Medical Diagnostic Support",
-      "Healthcare Data Strategy",
-    ],
-  },
-  {
-    icon: Database,
-    title: "Applied XAI & Model Trust",
-    skills: [
-      "Grad-CAM & Attention Maps",
-      "SHAP & Model Interpretability",
-      "Clinical Trust & Transparency",
-      "Bias Analysis & Mitigation",
-      "Expert-in-the-loop Systems",
-      "Strategic Model Validation",
+      "Vision Transformers (ViT-B/32)",
+      "12-Layer Attention Rollout & Grad-CAM",
+      "MRI Scans & Atrophy Localization",
+      "Faithfulness AUC (Deletion/Insertion)",
+      "Clinical Expert-in-the-Loop Protocols",
+      "PyTorch, TorchVision & Medical FastAPIs",
     ],
   },
   {
     icon: Sparkles,
-    title: "Intelligent Systems & Automation",
+    title: "Agentic Systems & Zero-Server WASM",
+    badge: "Graph RAG & Agents",
     skills: [
-      "Neural Architecture Design",
-      "Adaptive Learning Systems",
-      "Predictive Analytics & ROI",
-      "Scalable Learning Infrastructure",
-      "Intelligent Process Automation",
-      "Generative AI Architectures",
+      "In-Browser Knowledge Graphs (WASM)",
+      "Graph RAG Orchestration (LangGraph)",
+      "AbortController Stream Cancellation (PR #1615)",
+      "Chrome Manifest V3 Browser Agents",
+      "DOM Mutation Observers & Safety Enforcers",
+      "Zero-Server Client Sandbox Security",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Generative Multimodal & EdTech",
+    badge: "Diffusion & Education",
+    skills: [
+      "Sequential Diffusion Try-On (FASHN / fal.ai)",
+      "Procedural WebAudio Synthesizers",
+      "Speech-to-Wardrobe NLP Parsing",
+      "300-DPI Prepress Automated Publishing",
+      "Generative Curriculum DAGs (Vision Vee)",
+      "Multi-Tenant Platforms & 5-Locale i18n",
     ],
   },
   {
     icon: Code,
-    title: "Advanced Engineering Stack",
+    title: "Production Architecture & Venture Stack",
+    badge: "Venture Leadership",
     skills: [
-      "Python / PyTorch / TensorFlow",
-      "Next.js / TypeScript / React",
-      "Cloud AI (AWS / Azure / GCP)",
-      "Production-Grade MLOps",
-      "Distributed System Design",
-      "Full-Stack AI Integration",
+      "Next.js 16 (App Router) & React 19",
+      "TypeScript, Python & C++ WASM Toolchains",
+      "High-Performance Asynchronous APIs",
+      "Commercial Stripe Recurring Subscriptions",
+      "Docker Production Containerization",
+      "Vercel Edge & Cloud Deployment",
     ],
   },
 ]
@@ -67,58 +72,67 @@ export function SkillsSection() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   }
 
   return (
-    <section id="skills" className="py-24 sm:py-32 relative overflow-hidden flex flex-col items-center justify-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-bold mb-16 text-balance flex items-center justify-center gap-4 text-center"
-          >
-            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
-            Skills & Expertise
-            <div className="h-px bg-primary/30 flex-1 hidden sm:block" />
-          </motion.h2>
+    <section id="skills" className="py-24 sm:py-32 relative overflow-hidden bg-background border-t border-border/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/30 text-primary">
+            Technical Arsenal
+          </Badge>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+            Applied AI Architecture & Engineering Stack
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground">
+            A comprehensive matrix of production capabilities spanning clinical deep learning, autonomous agent runtimes, multimodal generative engines, and venture-grade infrastructure.
+          </p>
+        </div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid gap-6 md:grid-cols-2"
-          >
-            {skillCategories.map((category, index) => {
-              const Icon = category.icon
-              return (
-                <motion.div key={index} variants={itemVariants}>
-                  <Card className="p-8 glass hover:bg-white/5 border-white/5 hover:border-primary/50 transition-all duration-500 group flex flex-col items-center text-center">
-                    <div className="flex flex-col items-center gap-4 mb-6">
-                      <div className="p-3 rounded-xl glass-darker group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-6 w-6 text-primary" />
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto"
+        >
+          {skillCategories.map((category, index) => {
+            const Icon = category.icon
+            return (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="p-7 bg-card/60 border-border/60 hover:border-primary/40 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2.5 rounded-lg bg-primary/10 border border-primary/20 text-primary">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">{category.title}</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground text-center">{category.title}</h3>
+                      <span className="text-[11px] font-mono font-medium px-2.5 py-1 rounded bg-muted text-muted-foreground border border-border/40">
+                        {category.badge}
+                      </span>
                     </div>
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                       {category.skills.map((skill) => (
-                        <li key={skill} className="text-muted-foreground text-lg flex items-center justify-center gap-3 group-hover:text-foreground transition-colors">
-                          <span className="w-2 h-2 rounded-full bg-primary/50 group-hover:bg-primary transition-colors shrink-0" />
-                          {skill}
-                        </li>
+                        <div
+                          key={skill}
+                          className="flex items-start gap-2 p-2 rounded-md bg-background/50 border border-border/30 text-xs text-foreground/85 font-medium hover:border-primary/30 transition-colors"
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                          <span className="leading-tight">{skill}</span>
+                        </div>
                       ))}
-                    </ul>
-                  </Card>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        </div>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
     </section>
   )

@@ -35,32 +35,37 @@ export function ContactSection() {
         >
           <div className="text-center mb-16">
             <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl font-black mb-6 text-balance text-gradient">
-              Open to collaborations, research opportunities, and AI innovation in healthcare and education
+              Technology Leadership, Research & Venture Inquiries
             </motion.h2>
             <motion.p variants={itemVariants} className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              I'm always interested in hearing about new high-impact projects and research collaborations. Whether you have a specific proposal or just want to discuss the future of AI, feel free to reach out!
+              Open to high-impact machine learning research collaborations, healthcare AI validation, and strategic digital technology initiatives in the UK and internationally.
             </motion.p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3 mb-16">
             {[
-              { icon: Mail, title: "Email", value: "basseyriman@gmail.com", href: "mailto:basseyriman@gmail.com" },
-              { icon: MessageSquare, title: "LinkedIn", value: "Bassey Riman", href: "https://www.linkedin.com/in/basseyriman/" },
-              { icon: Calendar, title: "Work", value: "Full-time / Contract", href: "#" },
+              { icon: Mail, title: "Official Correspondence", value: "basseyriman@gmail.com", href: "mailto:basseyriman@gmail.com", subtext: "Direct Inquiries" },
+              { icon: MessageSquare, title: "Executive Network", value: "linkedin.com/in/basseyriman", href: "https://www.linkedin.com/in/basseyriman/", subtext: "LinkedIn Verified" },
+              { icon: Calendar, title: "Venture Headquarters", value: "RimansTech Industries", href: "https://www.rimanstech.com", subtext: "London, United Kingdom" },
             ].map((contact, i) => (
               <motion.a
                 key={contact.title}
                 href={contact.href}
+                target={contact.href.startsWith("http") ? "_blank" : undefined}
+                rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
                 className="group"
               >
-                <Card className="p-8 text-center glass hover:bg-white/5 border-white/5 group-hover:border-primary/50 transition-all duration-500 h-full">
-                  <div className="inline-flex p-4 rounded-xl glass-darker group-hover:bg-primary/20 transition-colors mb-6 text-primary">
-                    <contact.icon className="h-6 w-6" />
+                <Card className="p-8 text-center glass hover:bg-white/5 border-white/5 group-hover:border-primary/50 transition-all duration-500 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="inline-flex p-4 rounded-xl glass-darker group-hover:bg-primary/20 transition-colors mb-6 text-primary">
+                      <contact.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-1 text-foreground">{contact.title}</h3>
+                    <p className="text-sm font-semibold text-primary/90 mb-1 truncate">{contact.value}</p>
+                    <p className="text-xs text-muted-foreground">{contact.subtext}</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{contact.title}</h3>
-                  <p className="text-muted-foreground truncate">{contact.value}</p>
                 </Card>
               </motion.a>
             ))}
@@ -80,7 +85,7 @@ export function ContactSection() {
       {/* Footer */}
       <div className="max-w-4xl mx-auto mt-24 px-4 pb-12 flex flex-col items-center">
         <div className="pt-12 w-full border-t border-white/5 flex flex-col items-center justify-center gap-6 text-base text-muted-foreground text-center">
-          <p>© 2026 Bassey Riman. Built with Next.js, Framer Motion & Premium Aesthetics</p>
+          <p>© 2026 Bassey Riman. Founder & Principal AI Architect — London, UK</p>
           <div className="flex items-center gap-8">
             <a href="https://github.com/basseyriman" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
             <a href="https://www.linkedin.com/in/basseyriman/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
