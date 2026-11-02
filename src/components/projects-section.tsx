@@ -4,11 +4,11 @@ import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, FileText, CheckCircle2, Cpu, GitFork, Sparkles } from "lucide-react"
+import { ExternalLink, Github, FileText, CheckCircle2, Cpu, ShieldCheck } from "lucide-react"
 
 interface Project {
   id: string
-  category: "clinical" | "agents" | "multimodal" | "simulation" | "opensource"
+  category: "clinical" | "opensource" | "agents" | "multimodal" | "simulation"
   title: string
   subtitle: string
   productionStatus: string
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "AlzDetect — Explainable Vision Transformer Platform",
     subtitle: "Clinical Neuroimaging Diagnostic Platform",
     productionStatus: "ELSEVIER NEURI-D-26-00260R1",
-    statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Architected an end-to-end medical deep learning platform that classifies four stages of Alzheimer's Disease from 5,120 brain MRI scans using a Vision Transformer (ViT-B/32). Integrates 12-layer Attention Rollout and Grad-CAM for physician-level interpretability. Submitted to Elsevier Neuroscience Informatics (Ref: NEURI-D-26-00260R1, 51-page revision with comprehensive reviewer responses) and clinically evaluated by Dr. Ademola Adewara (Principal Medical Officer).",
     image: "/alzdetect-device.png",
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "GitNexus — Zero-Server Code Intelligence Engine",
     subtitle: "In-Browser Knowledge Graph & Graph RAG Agent",
     productionStatus: "TRENDING OPEN SOURCE",
-    statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Client-side knowledge graph creator and code exploration engine that runs entirely in the browser using WebAssembly. Drop in any GitHub repository or ZIP file to generate an interactive structural graph with a built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for the Nexus AI LangGraph agent (PR #1615) with automated test suites.",
     image: "/gitnexus-preview.png",
@@ -73,7 +73,7 @@ const projects: Project[] = [
     title: "AI Quest — Machine Learning Simulation Platform",
     subtitle: "Cloud Tabletop & Prepress ML Education Engine",
     productionStatus: "EVENTBRITE TICKETING LIVE",
-    statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Conceived and engineered a comprehensive simulation engine that models the end-to-end 7-stage machine learning lifecycle across 15 mission domains and 240 vector cards. Engineered with a zero-scroll mobile game cockpit (<1024px), procedural WebAudio synthesizer for iOS silent-switch unlock, and 300-DPI prepress print manufacturing pipeline. Hosting London rooftop playtesting at cloudM Tower of London.",
     image: "/product-ai-quest.png",
@@ -94,7 +94,7 @@ const projects: Project[] = [
     title: "VoiceDress — Generative Fashion & Virtual Try-On",
     subtitle: "Voice-First Multimodal Wardrobe Stylist",
     productionStatus: "STRIPE MONETIZED",
-    statusColor: "text-purple-400 bg-purple-500/10 border-purple-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Engineered an autonomous voice-orchestrated personal styling and virtual try-on progressive web app (PWA). Users speak an occasion or mood, and the NLP engine resolves their wardrobe, integrates real-time weather, matches style color theory, and renders layered diffusion try-on onto their photograph via FASHN and fal.ai. Monorepo with active Stripe recurring subscriptions (£19/mo, £149/yr).",
     image: "/voicedress_live.png",
@@ -115,7 +115,7 @@ const projects: Project[] = [
     title: "Pointly — Autonomous AI Web Navigation Assistant",
     subtitle: "Chrome Manifest V3 Agent & DOM Analyzer",
     productionStatus: "CHROME EXTENSION STORE",
-    statusColor: "text-sky-400 bg-sky-500/10 border-sky-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Engineered an enterprise-grade AI web navigation assistant that analyzes live DOM structures and projects floating SVG pointer overlays directly above the target control. Implements a strict 'Zero Auto-Clicks' security model: Pointly points, but the human user always clicks. Backed by a Node.js/Express planner with structured GPT-4o output and sensitive control safety guards.",
     image: "/pointly-device.png",
@@ -136,7 +136,7 @@ const projects: Project[] = [
     title: "Young AI Explorers Platform & Published Book",
     subtitle: "Generative Curriculum Engine & Amazon UK STEM Book",
     productionStatus: "AMAZON UK PUBLISHED",
-    statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
+    statusColor: "text-primary bg-primary/10 border-primary/30",
     description:
       "Authored and illustrated the published children's STEM book 'Young AI Explorers: A Kid's Guide to the Future' (Amazon UK ASIN: B0H4KGNW3B) and engineered its multi-tenant companion web platform. Combines 38 structured lessons across 6 thematic islands with Vision Vee—an asynchronous generative curriculum DAG—and a 13-page interactive digital/print activity workbook. Personally donated to UK school libraries.",
     image: "/young-ai-explorers-book.png",
@@ -161,24 +161,24 @@ export function ProjectsSection() {
     : projects.filter(p => p.category === selectedCategory)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-muted/10 border-t border-border/50">
+    <section id="projects" className="py-24 sm:py-32 relative overflow-hidden bg-muted/10 border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header - Expansive */}
         <div className="max-w-5xl mx-auto text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
+          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5 px-3 py-1">
             <Cpu className="h-3.5 w-3.5 mr-1.5 text-primary inline" />
             Proprietary Systems Architecture & Open Source
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             Shipped Systems & Open-Source Projects
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto font-normal">
             Production systems and public open-source contributions engineered by Bassey Riman under <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a>. Each features live deployments, verified codebases, and downloadable technical specifications.
           </p>
         </div>
 
-        {/* Category Filters */}
+        {/* Category Filters - Refined Glass Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
           {[
             { label: "All Systems (6)", value: "all" },
@@ -193,7 +193,7 @@ export function ProjectsSection() {
               onClick={() => setSelectedCategory(tab.value)}
               className={`px-4 py-2 text-xs font-mono rounded-lg transition-all border ${
                 selectedCategory === tab.value
-                  ? "bg-primary text-primary-foreground border-primary font-bold shadow-md shadow-primary/20"
+                  ? "bg-white/[0.08] text-white border-primary shadow-[0_0_15px_rgba(222,192,119,0.25)] font-bold"
                   : "bg-card/40 text-muted-foreground border-border/60 hover:text-foreground hover:bg-card/70"
               }`}
             >
@@ -202,18 +202,18 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Project Cards Stack */}
+        {/* Project Cards Stack - Wide & Spacious (max-w-6xl) */}
         <div className="space-y-12 max-w-6xl mx-auto">
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="glass-card rounded-2xl overflow-hidden p-1 transition-all duration-300"
+              className="glass-card rounded-2xl overflow-hidden p-1 transition-all duration-300 border border-primary/15 hover:border-primary/40 shadow-xl"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-9 items-center">
                 {/* Left Column: Details */}
                 <div className="lg:col-span-7 space-y-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className={`text-[10px] font-mono px-2.5 py-0.5 rounded border font-semibold ${project.statusColor}`}>
+                    <span className={`text-[10px] font-mono px-3 py-1 rounded-md border font-bold ${project.statusColor}`}>
                       {project.productionStatus}
                     </span>
                     {project.authorityTags.map((tag) => (
@@ -224,66 +224,66 @@ export function ProjectsSection() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs text-primary font-mono mt-0.5">
+                    <p className="text-xs text-primary font-mono mt-1 font-semibold">
                       {project.subtitle}
                     </p>
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-neutral-300/90 leading-relaxed font-normal">
                     {project.description}
                   </p>
 
                   {/* Metrics list */}
-                  <div className="space-y-1.5 pt-1">
+                  <div className="space-y-2 pt-1">
                     {project.metrics.map((metric) => (
-                      <div key={metric} className="flex items-start gap-2 text-xs text-foreground/90 font-medium">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <div key={metric} className="flex items-start gap-2.5 text-xs text-neutral-200 font-medium">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                         <span>{metric}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Tech Badges */}
+                  {/* Technology Pills */}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 text-[11px] font-mono rounded bg-muted/80 text-foreground/80 border border-border/60"
+                        className="px-2.5 py-0.5 text-[11px] font-mono rounded bg-white/[0.04] text-neutral-300 border border-white/10"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* Links & Dossier Buttons */}
-                  <div className="flex flex-wrap items-center gap-2.5 pt-3">
+                  {/* Links & Dossier Buttons - Frosted Glass Luxury */}
+                  <div className="flex flex-wrap items-center gap-2.5 pt-4">
                     {project.demo && (
-                      <Button size="sm" className="bg-primary hover:bg-primary/90 text-xs font-mono gap-1.5 shadow-md shadow-primary/20" asChild>
+                      <Button size="sm" className="bg-white/[0.08] hover:bg-white/[0.14] text-white border border-primary/50 hover:border-primary text-xs font-mono gap-1.5 shadow-md shadow-primary/10 rounded-lg" asChild>
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-3.5 w-3.5" />
+                          <ExternalLink className="h-3.5 w-3.5 text-primary" />
                           Live Platform
                         </a>
                       </Button>
                     )}
-                    <Button size="sm" variant="outline" className="text-xs font-mono gap-1.5 border-border/80 hover:bg-card" asChild>
+                    <Button size="sm" variant="outline" className="text-xs font-mono gap-1.5 border-border/80 hover:bg-card rounded-lg" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="h-3.5 w-3.5" />
                         Source Code
                       </a>
                     </Button>
-                    <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20" asChild>
+                    <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20 rounded-lg" asChild>
                       <a href={project.dossier} target="_blank" rel="noopener noreferrer">
                         <FileText className="h-3.5 w-3.5 text-primary" />
                         3-Page Spec (PDF)
                       </a>
                     </Button>
                     {project.researchDossier && (
-                      <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20" asChild>
+                      <Button size="sm" variant="secondary" className="gap-1.5 text-xs font-mono hover:bg-primary/20 rounded-lg" asChild>
                         <a href={project.researchDossier} target="_blank" rel="noopener noreferrer">
-                          <FileText className="h-3.5 w-3.5 text-accent" />
+                          <FileText className="h-3.5 w-3.5 text-primary" />
                           Elsevier Research (PDF)
                         </a>
                       </Button>
@@ -291,20 +291,23 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Right Column: Visual Preview */}
-                <div className="lg:col-span-5 flex justify-center">
-                  <div className="relative rounded-xl overflow-hidden border border-border/80 shadow-2xl bg-black/60 p-2.5 max-h-[350px] w-full flex items-center justify-center group">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="rounded-lg object-contain max-h-[310px] w-auto group-hover:scale-105 transition-transform duration-500"
+                {/* Right Column: Visual Device Asset */}
+                <div className="lg:col-span-5 relative">
+                  <div className="relative rounded-xl overflow-hidden border border-white/[0.08] shadow-2xl bg-black/60 group">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500" 
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

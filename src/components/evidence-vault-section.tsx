@@ -209,14 +209,14 @@ export function EvidenceVaultSection() {
         </div>
 
         {/* Mandatory Core Documents Card */}
-        <div className="max-w-5xl mx-auto mb-12 p-6 rounded-2xl border border-primary/40 bg-gradient-to-br from-card/90 via-primary/5 to-card/90 shadow-2xl">
+        <div className="max-w-6xl mx-auto mb-12 p-7 rounded-2xl border border-primary/30 bg-gradient-to-br from-card/90 via-primary/5 to-card/90 shadow-2xl">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
               <div className="flex items-center gap-2">
-                <Badge className="bg-primary text-primary-foreground font-mono text-xs">MANDATORY APPLICATION CORE</Badge>
+                <Badge className="bg-primary/20 text-primary border border-primary/40 font-mono text-xs">MANDATORY APPLICATION CORE</Badge>
                 <Badge variant="outline" className="border-emerald-500/40 text-emerald-300 font-mono text-xs">3 Pages Each • Under 1.5 MB</Badge>
               </div>
-              <h3 className="text-xl font-bold text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
                 Executive CV, 950-Word Personal Statement & Recommendation Letters
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground">
@@ -224,15 +224,15 @@ export function EvidenceVaultSection() {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <Button size="sm" className="font-mono text-xs bg-primary hover:bg-primary/90 gap-1.5 shadow-lg shadow-primary/25" asChild>
+              <Button size="sm" className="font-mono text-xs bg-white text-neutral-950 hover:bg-neutral-200 font-bold gap-1.5 shadow-md shadow-white/10 rounded-lg" asChild>
                 <a href="/dossiers/00_MANDATORY_Bassey_Riman_Executive_CV_3Pages.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="h-3.5 w-3.5" />
                   Executive CV (3 Pages)
                 </a>
               </Button>
-              <Button size="sm" variant="outline" className="font-mono text-xs border-primary/40 hover:bg-primary/10 gap-1.5" asChild>
+              <Button size="sm" variant="outline" className="font-mono text-xs border-primary/40 text-white hover:bg-white/[0.05] hover:border-primary gap-1.5 rounded-lg" asChild>
                 <a href="/dossiers/00_MANDATORY_Bassey_Riman_Personal_Statement.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText className="h-3.5 w-3.5 text-sky-400" />
+                  <FileText className="h-3.5 w-3.5 text-primary" />
                   Personal Statement (PDF)
                 </a>
               </Button>
@@ -241,7 +241,7 @@ export function EvidenceVaultSection() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {[
             { label: "All 10 Dossiers", value: "ALL" },
             { label: "Mandatory (MC)", value: "MC" },
@@ -254,7 +254,7 @@ export function EvidenceVaultSection() {
               onClick={() => setFilter(tab.value)}
               className={`px-4 py-2 text-xs font-mono rounded-lg transition-all border ${
                 filter === tab.value
-                  ? "bg-primary text-primary-foreground border-primary font-bold shadow-md shadow-primary/20"
+                  ? "bg-white/[0.08] text-white border-primary shadow-[0_0_15px_rgba(222,192,119,0.25)] font-bold"
                   : "bg-card/40 text-muted-foreground border-border/60 hover:text-foreground hover:bg-card/70"
               }`}
             >
@@ -264,7 +264,7 @@ export function EvidenceVaultSection() {
         </div>
 
         {/* Dossiers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {filteredDossiers.map((dossier) => (
             <Card
               key={dossier.id}

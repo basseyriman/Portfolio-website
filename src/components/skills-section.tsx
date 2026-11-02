@@ -79,14 +79,14 @@ export function SkillsSection() {
   return (
     <section id="skills" className="py-24 sm:py-32 relative overflow-hidden bg-background border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/30 text-primary">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
             Technical Arsenal
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             Applied AI Architecture & Engineering Stack
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             A comprehensive matrix of production capabilities spanning clinical deep learning, autonomous agent runtimes, multimodal generative engines, and venture-grade infrastructure.
           </p>
         </div>
@@ -96,7 +96,7 @@ export function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto"
+          className="grid gap-6 md:grid-cols-2 max-w-6xl mx-auto"
         >
           {skillCategories.map((category, index) => {
             const Icon = category.icon

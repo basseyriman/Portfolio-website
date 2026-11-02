@@ -241,11 +241,11 @@ export function HeroSection() {
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">Elsevier Paper Under Review</div>
             </div>
             <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
-              <div className="text-3xl sm:text-4xl font-extrabold text-accent font-mono tracking-tight">GitNexus</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-neutral-100 font-mono tracking-tight">GitNexus</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">Graph RAG Open-Source Contributor</div>
             </div>
-            <div className="p-5 rounded-xl glass-card border border-white/[0.08] hover:border-primary/40 transition-colors">
-              <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-mono tracking-tight">Distinction</div>
+            <div className="p-5 rounded-xl glass-card border border-primary/25 hover:border-primary/50 transition-colors">
+              <div className="text-3xl sm:text-4xl font-extrabold text-primary font-mono tracking-tight">Distinction</div>
               <div className="text-xs text-neutral-400 mt-1.5 font-medium">MSc Artificial Intelligence (UK)</div>
             </div>
           </div>

@@ -60,14 +60,14 @@ export function KeyAchievementsSection() {
   return (
     <section id="achievements" className="py-20 bg-background border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <Badge variant="outline" className="mb-3 text-xs font-mono font-medium border-primary/30 text-primary">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <Badge variant="outline" className="mb-3 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5 px-3 py-1">
             Verifiable Milestones
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             Key Academic & Industry Milestones
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Backed by independent clinical evaluations, peer-reviewed scientific submissions, published authorship, and senior enterprise letters.
           </p>
         </div>

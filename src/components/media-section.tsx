@@ -96,15 +96,15 @@ export function MediaSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5 px-3 py-1">
             <Sparkles className="h-3.5 w-3.5 mr-1.5 text-primary inline" />
             Thought Leadership & Public Profile
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             National Recognition & Keynotes
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
             Featured across national tier-1 daily press, invited as a keynote speaker by UK academic institutions, and actively mentoring through STEM authorship.
           </p>
         </div>

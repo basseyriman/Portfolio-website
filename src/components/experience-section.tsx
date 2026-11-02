@@ -71,19 +71,19 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="py-24 sm:py-32 relative overflow-hidden bg-background border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/30 text-primary">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
             Career Timeline
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             Professional & Founder Leadership
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
             Demonstrated track record of directing technology ventures, collaborating with tier-1 enterprise institutions, and translating research into commercial impact.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-6xl mx-auto space-y-6">
           {experiences.map((exp, idx) => (
             <motion.div
               key={exp.title}
