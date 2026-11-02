@@ -4,12 +4,11 @@ import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, FileText, CheckCircle2, Cpu, Sparkles, Layers } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { ExternalLink, Github, FileText, CheckCircle2, Cpu, GitFork, Sparkles } from "lucide-react"
 
 interface Project {
   id: string
-  category: "clinical" | "agents" | "multimodal" | "simulation"
+  category: "clinical" | "agents" | "multimodal" | "simulation" | "opensource"
   title: string
   subtitle: string
   productionStatus: string
@@ -20,7 +19,7 @@ interface Project {
   authorityTags: string[]
   metrics: string[]
   github: string
-  demo: string
+  demo?: string
   dossier: string
   researchDossier?: string
 }
@@ -31,22 +30,42 @@ const projects: Project[] = [
     category: "clinical",
     title: "AlzDetect — Explainable Vision Transformer Platform",
     subtitle: "Clinical Neuroimaging Diagnostic Platform",
-    productionStatus: "ELSEVIER UNDER REVIEW",
+    productionStatus: "ELSEVIER NEURI-D-26-00260R1",
     statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
     description:
-      "Architected an end-to-end medical deep learning platform that classifies four stages of Alzheimer's Disease from 5,120 brain MRI scans using a Vision Transformer (ViT-B/32). Integrates 12-layer Attention Rollout and Grad-CAM for physician-level interpretability. Submitted to Elsevier Neuroscience Informatics (NEURI-D-26-00238R1) and clinically evaluated by Dr. Ademola Adewara (Principal Medical Officer).",
+      "Architected an end-to-end medical deep learning platform that classifies four stages of Alzheimer's Disease from 5,120 brain MRI scans using a Vision Transformer (ViT-B/32). Integrates 12-layer Attention Rollout and Grad-CAM for physician-level interpretability. Submitted to Elsevier Neuroscience Informatics (Ref: NEURI-D-26-00260R1, 51-page revision with comprehensive reviewer responses) and clinically evaluated by Dr. Ademola Adewara (Principal Medical Officer).",
     image: "/alzdetect-device.png",
     technologies: ["Vision Transformers (ViT-B/32)", "FastAPI", "Next.js 15", "PyTorch", "Docker", "Explainable AI (XAI)"],
-    authorityTags: ["Clinical Neuroimaging", "99.00% Accuracy", "0.9994 ROC-AUC", "Elsevier Research"],
+    authorityTags: ["Clinical Neuroimaging", "99.00% Accuracy", "0.9994 ROC-AUC", "Elsevier NEURI-D-26-00260R1"],
     metrics: [
-      "99.00% Test Accuracy & 0.9901 Macro F1 on 5,120 brain MRIs",
+      "99.00% Test Accuracy & 0.9901 Macro F1 across 5,120 brain MRIs",
       "12-layer attention rollout maps highlighting hippocampal atrophy",
-      "Evaluated & validated by NHS/hospital clinicians for diagnostic workflows"
+      "Evaluated & clinically validated by NHS/hospital medical officers"
     ],
     github: "https://github.com/basseyriman/AlzDetect",
     demo: "https://www.alzdetect.live/",
     dossier: "/dossiers/03_OC1_OC3_AlzDetect_ViT_System_Architecture_Spec.pdf",
     researchDossier: "/dossiers/04_OC4_OC3_AlzDetect_ViT_Elsevier_Research_Dossier.pdf"
+  },
+  {
+    id: "gitnexus",
+    category: "opensource",
+    title: "GitNexus — Zero-Server Code Intelligence Engine",
+    subtitle: "In-Browser Knowledge Graph & Graph RAG Agent",
+    productionStatus: "TRENDING OPEN SOURCE",
+    statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
+    description:
+      "Client-side knowledge graph creator and code exploration engine that runs entirely in the browser using WebAssembly. Drop in any GitHub repository or ZIP file to generate an interactive structural graph with a built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for the Nexus AI LangGraph agent (PR #1615) with automated test suites.",
+    image: "/product-ai-quest.png", // or gitnexus screenshot
+    technologies: ["TypeScript", "LangGraph", "Graph RAG", "AbortController", "Web Streams", "WASM"],
+    authorityTags: ["Graph RAG", "Open-Source Contributor", "Zero-Server WASM", "PR #1615"],
+    metrics: [
+      "In-browser knowledge graph synthesis without sending code to third-party servers",
+      "Personally authored AbortController cancellation for streaming LangGraph execution",
+      "Adopted by software engineers globally for automated repository comprehension"
+    ],
+    github: "https://github.com/basseyriman/GitNexus",
+    dossier: "/dossiers/09_OC2_Technical_Thought_Leadership_and_Peer_Education_Dossier.pdf"
   },
   {
     id: "aiquest",
@@ -125,7 +144,7 @@ const projects: Project[] = [
     authorityTags: ["Published Author", "Amazon ASIN: B0H4KGNW3B", "UK Primary Schools", "Multi-Tenant EdTech"],
     metrics: [
       "Published 41-page, 37-chapter book on Amazon UK for ages 9–12",
-      "Physical copies donated to UK school libraries (Harris Primary Academy)",
+      "Grassroots book donation initiative for UK school libraries",
       "Multi-tenant Next.js 16 platform with 5-locale internationalization"
     ],
     github: "https://github.com/basseyriman/Young-AI-Explorers",
@@ -149,21 +168,22 @@ export function ProjectsSection() {
         <div className="max-w-3xl mx-auto text-center mb-14">
           <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
             <Cpu className="h-3.5 w-3.5 mr-1.5 text-sky-400 inline" />
-            Proprietary Systems Architecture
+            Proprietary Systems Architecture & Open Source
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
-            Shipped AI Products & Platforms
+            Shipped Systems & Open-Source Projects
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Five production systems engineered and commercialized under <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a>. Each features live deployments, verified codebases, and downloadable technical specifications.
+            Production systems and public open-source contributions engineered by Bassey Riman under <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a>. Each features live deployments, verified codebases, and downloadable technical specifications.
           </p>
         </div>
 
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {[
-            { label: "All Systems (5)", value: "all" },
+            { label: "All Systems (6)", value: "all" },
             { label: "Clinical AI & Research", value: "clinical" },
+            { label: "Open-Source & Graph RAG", value: "opensource" },
             { label: "Autonomous Agents", value: "agents" },
             { label: "Multimodal GenAI", value: "multimodal" },
             { label: "Simulations & EdTech", value: "simulation" },
@@ -240,12 +260,14 @@ export function ProjectsSection() {
 
                   {/* Links & Dossier Buttons */}
                   <div className="flex flex-wrap items-center gap-2.5 pt-3">
-                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-xs font-mono gap-1.5 shadow-md shadow-primary/20" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-3.5 w-3.5" />
-                        Live Platform
-                      </a>
-                    </Button>
+                    {project.demo && (
+                      <Button size="sm" className="bg-primary hover:bg-primary/90 text-xs font-mono gap-1.5 shadow-md shadow-primary/20" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-3.5 w-3.5" />
+                          Live Platform
+                        </a>
+                      </Button>
+                    )}
                     <Button size="sm" variant="outline" className="text-xs font-mono gap-1.5 border-border/80 hover:bg-card" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="h-3.5 w-3.5" />

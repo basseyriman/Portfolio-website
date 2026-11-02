@@ -75,12 +75,12 @@ const dossiers: Dossier[] = [
     criteria: "Optional Criteria 4 (OC4) & 3 (OC3) — Academic Research",
     criteriaCategory: "OC4",
     title: "Elsevier Neuroscience Informatics Research Dossier",
-    subtitle: "Paper NEURI-D-26-00238R1 Under Peer Review",
+    subtitle: "Paper NEURI-D-26-00260R1 (51-Page Revision Under Review)",
     pages: 3,
     fileSize: "0.64 MB",
     pdfUrl: "/dossiers/04_OC4_OC3_AlzDetect_ViT_Elsevier_Research_Dossier.pdf",
     highlights: [
-      "Editorial submission receipt, ScholarOne tracking & full research manuscript",
+      "Editorial submission receipt, ScholarOne tracking & 51-page revised manuscript",
       "Supervised by Prof. Claudio Angione (Professor of AI, Teesside University)",
       "Rigorous ablation studies comparing ViT against ResNet-50 and EfficientNet-B0"
     ]
@@ -122,14 +122,14 @@ const dossiers: Dossier[] = [
     number: "Evidence 07",
     criteria: "Optional Criteria 2 (OC2) — Published Book & UK Impact",
     criteriaCategory: "OC2",
-    title: "Amazon UK Published STEM Book & UK Schools Impact",
+    title: "Amazon UK Published STEM Book & UK Educational Outreach",
     subtitle: "Young AI Explorers (Amazon ASIN: B0H4KGNW3B)",
     pages: 3,
     fileSize: "1.28 MB",
     pdfUrl: "/dossiers/07_OC2_Young_AI_Explorers_Book_and_UK_Schools_Impact.pdf",
     highlights: [
       "Official Amazon KDP catalog proof, ASIN metadata & 41-page print publication",
-      "Written letter of acknowledgment from Harris Primary Academy library donation",
+      "Grassroots book donation initiative for UK school libraries (Harris Primary Academy)",
       "STEM curriculum framework adopted across UK and international educational settings"
     ]
   },
@@ -154,15 +154,15 @@ const dossiers: Dossier[] = [
     number: "Evidence 09",
     criteria: "Optional Criteria 2 (OC2) — Technical Thought Leadership",
     criteriaCategory: "OC2",
-    title: "Technical Thought Leadership & Peer Education",
-    subtitle: "Medium Engineering Publications & GitHub Open-Source",
+    title: "Technical Thought Leadership & Open-Source Engineering",
+    subtitle: "Medium Publications (@basseyriman) & GitNexus Contribution",
     pages: 3,
     fileSize: "0.28 MB",
     pdfUrl: "/dossiers/09_OC2_Technical_Thought_Leadership_and_Peer_Education_Dossier.pdf",
     highlights: [
-      "3 peer-reviewed technical deep-dives on Medium covering Next.js 15, PWAs, and React architecture",
-      "22 public repositories on GitHub (@basseyriman) with reproducible open-source implementations",
-      "Documented developer community engagement, code samples, and architectural guides"
+      "3 peer-reviewed technical deep-dives on Medium (@basseyriman) covering Next.js, PWAs, and React",
+      "GitNexus Open-Source Contribution: Authored AbortController streaming cancellation for LangGraph (PR #1615)",
+      "22 public repositories on GitHub (@basseyriman) with reproducible open-source implementations"
     ]
   },
   {

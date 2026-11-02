@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Download, FileText, Sparkles, MapPin, ExternalLink, Terminal, Activity, ShieldCheck, Cpu } from "lucide-react"
+import { ArrowRight, Download, FileText, Sparkles, MapPin, ExternalLink, Terminal, Activity, ShieldCheck, Cpu, Code2, GraduationCap } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
@@ -11,12 +11,23 @@ const telemetryData = [
     id: "alzdetect",
     name: "AlzDetect ViT-B/32",
     badge: "Clinical Neuroimaging",
-    status: "ELSEVIER UNDER REVIEW",
+    status: "ELSEVIER NEURI-D-26-00260R1",
     statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
-    metric1: "99.00% Accuracy",
+    metric1: "99.00% Test Accuracy",
     metric2: "0.9994 ROC-AUC",
     stack: "PyTorch • ViT-B/32 • 12-Layer Attention Rollout • Grad-CAM • FastAPI",
-    description: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer). Detects 4 Alzheimer's stages across 5,120 brain MRIs with clinician explainability."
+    description: "Evaluated by Dr. Ademola Adewara (Principal Medical Officer). Detects 4 Alzheimer's stages across 5,120 brain MRIs with clinician explainability. 51-page revision with comprehensive reviewer responses submitted."
+  },
+  {
+    id: "gitnexus",
+    name: "GitNexus Graph RAG",
+    badge: "Open-Source Code Intelligence",
+    status: "TRENDING OPEN SOURCE",
+    statusColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/30",
+    metric1: "Client-Side Graph RAG",
+    metric2: "PR #1615 Contributed",
+    stack: "TypeScript • LangGraph • AbortController • Graph Algorithms • Browser Streams",
+    description: "Zero-server in-browser code intelligence and knowledge graph creator with built-in Graph RAG agent. Personally engineered AbortController streaming cancellation for Nexus AI agent with test suite."
   },
   {
     id: "pointly",
@@ -27,7 +38,7 @@ const telemetryData = [
     metric1: "Zero Auto-Clicks",
     metric2: "<150ms DOM Mut",
     stack: "Chrome Manifest V3 • Node.js / Express • GPT-4o • SVG Pointer Overlay",
-    description: "Enterprise web navigation assistant. Strict 'Zero Auto-Clicks' security model: Pointly highlights target controls, human user executes."
+    description: "Enterprise web navigation assistant. Strict 'Zero Auto-Clicks' security model: Pointly projects high-precision SVG pointers over target controls while the human user executes clicks."
   },
   {
     id: "voicedress",
@@ -38,7 +49,7 @@ const telemetryData = [
     metric1: "Two-Stage Diffusion",
     metric2: "£19/mo & £149/yr",
     stack: "Next.js 16 • fal.ai / FASHN • WebKit Audio API • Firebase • Stripe",
-    description: "Voice-driven wardrobe stylist and layered virtual try-on engine. Multi-stage sequential diffusion onto real photographs."
+    description: "Voice-driven wardrobe stylist and layered virtual try-on engine. Multi-stage sequential diffusion onto real photographs with active recurring Stripe monetization tiers."
   },
   {
     id: "aiquest",
@@ -49,7 +60,7 @@ const telemetryData = [
     metric1: "240 Card Engine",
     metric2: "15 ML Domains",
     stack: "React 19 • WebAudio DSP • 300 DPI Prepress • Directed Acyclic Graph",
-    description: "Simulates full 7-stage ML lifecycle. Ticketed London rooftop playtesting at cloudM Tower of London (citizenM)."
+    description: "Simulates full 7-stage ML lifecycle across 240 vector cards and zero-scroll mobile cockpit. Official industry playtesting showcase hosted at cloudM Rooftop Bar, citizenM Tower of London."
   }
 ]
 
@@ -71,7 +82,7 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* Identity & Endorsement Badges */}
+          {/* Identity & Credential Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
             <Badge variant="outline" className="px-3.5 py-1 text-xs font-mono font-medium border-primary/40 bg-primary/10 text-primary shadow-sm shadow-primary/20">
               <Sparkles className="h-3 w-3 mr-1.5 inline text-sky-400" />
@@ -82,8 +93,12 @@ export function HeroSection() {
               London, United Kingdom
             </Badge>
             <Badge variant="outline" className="px-3 py-1 text-xs font-mono border-emerald-500/40 text-emerald-300 bg-emerald-500/10">
-              <ShieldCheck className="h-3 w-3 mr-1 inline text-emerald-400" />
-              Tech Nation Global Talent Candidate
+              <GraduationCap className="h-3.5 w-3.5 mr-1 inline text-emerald-400" />
+              MSc AI Distinction • Teesside University
+            </Badge>
+            <Badge variant="outline" className="px-3 py-1 text-xs font-mono border-indigo-500/40 text-indigo-300 bg-indigo-500/10">
+              <ShieldCheck className="h-3 w-3 mr-1 inline text-indigo-400" />
+              Tech Nation Candidate
             </Badge>
           </div>
 
@@ -98,7 +113,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            I architect, benchmark, and deploy mission-critical Artificial Intelligence systems spanning <strong className="text-foreground">Clinical Neuroimaging (ViT-B/32)</strong>, <strong className="text-foreground">Autonomous Browser Agents (MV3)</strong>, <strong className="text-foreground">Multimodal Vision</strong>, and <strong className="text-foreground">STEM Pedagogical Platforms</strong>. Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a> and author of <em>Young AI Explorers</em>.
+            I architect, benchmark, and deploy mission-critical Artificial Intelligence systems spanning <strong className="text-foreground">Clinical Neuroimaging (ViT-B/32)</strong>, <strong className="text-foreground">In-Browser Graph RAG (GitNexus)</strong>, <strong className="text-foreground">Autonomous Browser Agents (MV3)</strong>, and <strong className="text-foreground">Multimodal GenAI</strong>. Founder of <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a> and author of <em>Young AI Explorers</em>.
           </p>
 
           {/* Action Buttons */}
@@ -192,19 +207,19 @@ export function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
             <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
               <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-sky-400">99.00%</div>
-              <div className="text-xs text-muted-foreground mt-1">AlzDetect MRI Accuracy (ViT-B/32)</div>
+              <div className="text-xs text-muted-foreground mt-1">AlzDetect ViT-B/32 Accuracy (5,120 MRIs)</div>
             </div>
             <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-emerald-400">5 Systems</div>
-              <div className="text-xs text-muted-foreground mt-1">Proprietary AI Products Shipped</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-indigo-400">GitNexus</div>
+              <div className="text-xs text-muted-foreground mt-1">Graph RAG Open-Source Contribution</div>
             </div>
             <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
-              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-indigo-400">22 Repos</div>
-              <div className="text-xs text-muted-foreground mt-1">Public Repositories on GitHub</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-emerald-400">Distinction</div>
+              <div className="text-xs text-muted-foreground mt-1">MSc Artificial Intelligence (Teesside)</div>
             </div>
             <div className="p-4 rounded-xl bg-card/70 border border-border/70 hover:border-primary/40 transition-all shadow-md">
               <div className="text-2xl sm:text-3xl font-extrabold text-foreground font-mono text-amber-400">10 / 10</div>
-              <div className="text-xs text-muted-foreground mt-1">Tech Nation Dossiers Complete</div>
+              <div className="text-xs text-muted-foreground mt-1">Tech Nation Endorsement Dossiers</div>
             </div>
           </div>
 

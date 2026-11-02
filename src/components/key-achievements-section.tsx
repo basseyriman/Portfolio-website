@@ -26,32 +26,32 @@ const achievements = [
     icon: Award,
     title: "Journal Submission & Faithfulness",
     subtitle: "Elsevier Neuroscience Informatics",
-    description: "Authored manuscript NEURI-D-26-00238R1 demonstrating that Vision Transformers achieve 0.182 Deletion and 0.788 Insertion AUC faithfulness, outperforming CNN baselines.",
+    description: "Authored manuscript NEURI-D-26-00260R1 demonstrating that Vision Transformers achieve 0.182 Deletion and 0.788 Insertion AUC faithfulness, outperforming CNN baselines. 51-page revision with comprehensive reviewer responses submitted.",
     metric: "0.9994 ROC-AUC",
-    subtext: "Elsevier NEURI-D-26-00238R1"
+    subtext: "Elsevier NEURI-D-26-00260R1"
   },
   {
     icon: BookCheck,
     title: "Published STEM Book Author",
     subtitle: "Young AI Explorers (Amazon UK)",
-    description: "Published 37-chapter educational AI guide for ages 9–12 (ASIN: B0H4KGNW3B). Personally donated physical copies to UK school libraries, verified by Harris Primary Academy Haling Park.",
+    description: "Published 37-chapter educational AI guide for ages 9–12 (ASIN: B0H4KGNW3B). Conceived 13-page student activity workbook and direct grassroots book donation initiative to UK school libraries.",
     metric: "Amazon UK ASIN",
-    subtext: "B0H4KGNW3B / School Donations"
+    subtext: "B0H4KGNW3B / Library Donations"
   },
   {
     icon: ShieldCheck,
     title: "Commercial Multi-Product Venture",
     subtitle: "RimansTech Industries",
-    description: "Founded London AI venture shipping 5 proprietary platforms with active Stripe recurring billing, live Vercel Edge deployments, and ticketed London rooftop industry events.",
+    description: "Founded London AI venture shipping 5 proprietary platforms with active Stripe recurring billing, live Vercel Edge deployments, and ticketed London rooftop industry events at cloudM Tower of London.",
     metric: "5 Systems Shipped",
     subtext: "London Headquarters"
   },
   {
     icon: FileCheck,
-    title: "Open-Source Developer Reach",
-    subtitle: "22 Public GitHub Repositories",
-    description: "Active open-source contributor spanning Vision Transformers, client-side Graph RAG (GitNexus), zero-click browser navigation, and published technical tutorials on Medium.",
-    metric: "22 Public Repos",
+    title: "Open-Source & Graph RAG",
+    subtitle: "GitNexus & 22 Public Repositories",
+    description: "Contributed to GitNexus (trending in-browser Graph RAG agent) with AbortController streaming cancellation (PR #1615), alongside 22 public GitHub repositories and technical publications on Medium.",
+    metric: "GitNexus Contributor",
     subtext: "github.com/basseyriman"
   },
 ]
