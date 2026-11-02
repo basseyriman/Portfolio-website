@@ -165,21 +165,21 @@ export function ProjectsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-5xl mx-auto text-center mb-16">
           <Badge variant="outline" className="mb-4 text-xs font-mono font-medium border-primary/40 text-primary bg-primary/5">
-            <Cpu className="h-3.5 w-3.5 mr-1.5 text-sky-400 inline" />
+            <Cpu className="h-3.5 w-3.5 mr-1.5 text-primary inline" />
             Proprietary Systems Architecture & Open Source
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             Shipped Systems & Open-Source Projects
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
             Production systems and public open-source contributions engineered by Bassey Riman under <a href="https://rimanstech.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">RimansTech Industries</a>. Each features live deployments, verified codebases, and downloadable technical specifications.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
           {[
             { label: "All Systems (6)", value: "all" },
             { label: "Clinical AI & Research", value: "clinical" },
@@ -203,7 +203,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Project Cards Stack */}
-        <div className="space-y-10 max-w-5xl mx-auto">
+        <div className="space-y-12 max-w-6xl mx-auto">
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
